@@ -17,26 +17,26 @@ const SignIn = () => {
         /* New user has been created */
 
         // const lastSignInAt = ;
-
+        // console.log(res.user);
         /* store data to the database */
         const user = {
           email,
           lastSignInAt: res.user?.metadata?.lastSignInTime,
         };
 
-        fetch("localhost:5000/user", {
-          method: "PATCH",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.modifiedCount)
-              alert("User updated to the database successfully.");
-          });
+        // fetch("localhost:5000/user", {
+        //   method: "PATCH",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(user),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     if (data.modifiedCount)
+        //       alert("User updated to the database successfully.");
+        //   });
       })
       .catch((error) => {
         console.log(error);

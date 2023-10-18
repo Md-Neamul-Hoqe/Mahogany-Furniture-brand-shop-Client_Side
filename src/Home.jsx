@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      {/* const uniqueValues = [...new Set(Object.values(obj))]; */}
       <Brand />
       <Products />
       <Stat />

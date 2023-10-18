@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Cart from "../components/Cart";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -13,6 +14,7 @@ const ProductDetails = () => {
 
   return (
     <div className="relative">
+      <Cart />
       <section className="text-sm breadcrumbs w-full text-body py-10 px-40 bg-primary-light mb-10">
         <ul>
           <li>

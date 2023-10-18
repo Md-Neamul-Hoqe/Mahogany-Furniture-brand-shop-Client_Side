@@ -19,8 +19,10 @@ const SignUp = () => {
 
         const createdAt = res.user?.metadata?.creationTime;
 
+        console.log(name, email, password, createdAt);
+        
         /* store data to the database */
-        const user = { name, email, password, createdAt };
+        // const user = { name, email, password, createdAt };
 
         // fetch("localhost:5000/user", {
         //   method: "POST",

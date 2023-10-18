@@ -1,6 +1,3 @@
-## :computer: Task Description:
-
-Our company is focused on building websites based on renowned brands. Currently, we are in search of a MERN Stack developer to develop our upcoming brand-new website.
 
 :triangular_flag_on_post: Update in requirements
   - Check requirements 5,6,11
@@ -8,45 +5,11 @@ Our company is focused on building websites based on renowned brands. Currently,
 
 ### 🧮 Website Theme:
 
-Here, we have provided you a list of `7 different types of categories to build your brand-based website`. You are required to select `a single category` from the following list to build your website. Your website cannot have more than `one category type`. For instance, if you choose `Technology and Electronics`, your website will have products related to `Technology and Electronics` only; :x: `you cannot add other products`:x: related to Fashion and Apparel, Food and Beverage, etc.
-
-- **Category 1**: `Technology and Electronics`
-
-  - `Example`: Apple, Samsung, Sony, Google, Intel, etc.
-
-- **Category 2**: `Automotive`
-
-  - `Example`: Toyota, Ford, BMW, Mercedes-Benz, Tesla, Honda, etc.
-
-- **Category 3**: `Fashion and Apparel`
-
-  - `Example`: Nike, Adidas, Gucci, Zara, H&M, Levi's, etc.
-
-- **Category 4**: `Food and Beverage`
-
-  - `Example`: Coca-Cola, McDonald's, Starbucks, PepsiCo, Nestlé, Kellogg's, etc.
-
 - **Category 5**: `Retail and E-commerce`
 
   - `Example`: Amazon, Walmart, Alibaba, eBay, Target, Best Buy etc.
 
-- **Category 6**: `Entertainment and Media`
-
-  - `Example`: Disney, Netflix, Warner Bros., Sony Pictures, Spotify, Time Warner, etc.
-
-- **Category 7**: `Cosmetics and Beauty`
-
-  - `Example`: L'Oréal, Estée Lauder, Chanel, Dior, Urban Decay, Procter & Gamble, Revlon, Avon, Coty, etc.
-
-### :writing_hand: Main Requirements
-
-1. Make sure your design and website idea is unique. First, finalize your idea (what type of website you want to build). Then google the site design or visit `themeforest` to get your website idea. [You can visit this blog to collect free resources for your website](https://bootcamp.uxdesign.cc/free-images-and-resources-collection-for-website-c77f2fc46ce5). However, your website :x: `can not be related to your previous assignments or any demo project displayed in the course or in our conceptual sessions` :x:.
-
 2. Home page will have a navbar, banner, footer and at least 6 types of brand names having the following information: `brand image`and `brand name`.
-
-3. The navbar will have website name with logo, Home, Add Product, My Cart, and Login.
-
-4. Add two extra sections in the home page in addition to the 4 sections mentioned above.
 
 5. Create an `Add Product` page where there will be a form for the user to add a product. The form will have:
 
@@ -148,9 +111,5 @@ On the Login page, display errors when:
 3. Your live website link
 
 ### Deadline
+আর তুমি যদি এসাইনমেন্ট October 21 তারিখ সন্ধ্যা ৫.৫৯ এর মধ্যে সাবমিট করে তাহলে সর্বোচ্চ মার্কস ৫০। এর পরে সাবমিট করলে তোমার সর্বোচ্চ মার্কস ৩০।  
 
-এই এসাইনমেন্ট মুলত তিন দিনের এসাইনমেন্ট। অর্থাৎ আগামী 20 October, রাত ১১.৫৯ এর মধ্যে তোমার এসাইনমেন্ট জমা দিলে তোমার সর্বোচ্চ মার্কস ৬০ মার্কস (৫০ এসাইনমেন্ট এর মার্কস + ১০ মার্কস বোনাস) । আর তুমি যদি এসাইনমেন্ট October 21 তারিখ সন্ধ্যা ৫.৫৯ এর মধ্যে সাবমিট করে তাহলে সর্বোচ্চ মার্কস ৫০। এর পরে সাবমিট করলে তোমার সর্বোচ্চ মার্কস ৩০।  
-
-### :trophy: No Pain, No Gain:
-
-- The most beautiful moments in life comes after going through hardships and challenges.
