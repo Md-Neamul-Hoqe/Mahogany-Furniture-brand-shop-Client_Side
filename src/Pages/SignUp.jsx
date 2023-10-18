@@ -22,7 +22,7 @@ const SignUp = () => {
         /* store data to the database */
         const user = { name, email, password, createdAt };
 
-        fetch("https://coffee-store-server-seven-gamma.vercel.app/user", {
+        fetch("localhost:5000/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
