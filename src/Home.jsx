@@ -1,4 +1,3 @@
-import ProductDetails from "./Pages/ProductDetails";
 import Header from "./components/Header";
 import Products from "./components/Products";
 import Stat from "./components/Stat";
