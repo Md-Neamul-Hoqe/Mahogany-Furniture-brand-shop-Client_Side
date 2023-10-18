@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <section className="border-t-2 mt-20">
+    <section className="border-t-2">
       <footer className="max-w-5xl mx-auto footer p-10">
         <aside>
           <img src="./src/assets/images/logo.svg" alt="" />

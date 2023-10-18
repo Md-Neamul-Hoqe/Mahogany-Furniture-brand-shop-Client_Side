@@ -38,3 +38,7 @@ h4 {
 h5 {
   @apply font-semibold text-2xl text-title;
 }
+
+.hero:hover .hero-overlay {
+  @apply flex;
+}
