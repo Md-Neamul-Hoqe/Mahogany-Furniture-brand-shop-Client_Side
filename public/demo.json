@@ -1,0 +1,269 @@
+[
+    {
+      "title": "Rustic Oak Dining Table",
+      "subtitle": "Handcrafted Solid Wood",
+      "price": {
+        "old": 799.99,
+        "new": 599.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "A beautifully crafted oak dining table for family gatherings.",
+        "images": ["image1.jpg", "image2.jpg"]
+      },
+      "size": "L",
+      "color": "#8B4513",
+      "quantity": 10,
+      "brand": "Dining Tables",
+      "tags": ["Rustic", "Handcrafted", "Solid Wood"],
+      "status": "New"
+    },
+    {
+      "title": "Contemporary Maple Bookshelf",
+      "subtitle": "Minimalist Design",
+      "price": {
+        "old": 299.99,
+        "new": 249.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "A sleek and modern bookshelf made from maple wood.",
+        "images": ["image3.jpg", "image4.jpg"]
+      },
+      "size": "XL",
+      "color": "#FFD700",
+      "quantity": 15,
+      "brand": "Bookshelves",
+      "tags": ["Contemporary", "Maple", "Minimalist"],
+      "status": "-11%"
+    },
+    {
+      "title": "Vintage Pine Coffee Table",
+      "subtitle": "Antique Charm",
+      "price": {
+        "old": 149.99,
+        "new": 129.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "A charming coffee table made from reclaimed pine wood.",
+        "images": ["image5.jpg", "image6.jpg"]
+      },
+      "size": "L",
+      "color": "#A0522D",
+      "quantity": 12,
+      "brand": "Coffee Tables",
+      "tags": ["Vintage", "Pine", "Antique"],
+      "status": "New"
+    },
+    {
+      "title": "Classic Cherry Wardrobe",
+      "subtitle": "Elegant Storage",
+      "price": {
+        "old": 499.99,
+        "new": 449.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "An elegant cherry wood wardrobe for your bedroom.",
+        "images": ["image7.jpg", "image8.jpg"]
+      },
+      "size": "XL",
+      "color": "#800000",
+      "quantity": 8,
+      "brand": "Wardrobes",
+      "tags": ["Classic", "Cherry", "Elegant"],
+      "status": "New"
+    },
+    {
+      "title": "Handmade Teak Nightstand",
+      "subtitle": "Rustic Bedroom Decor",
+      "price": {
+        "old": 79.99,
+        "new": 69.99
+      },
+      "ratings": 3,
+      "description": {
+        "text": "A rustic teak wood nightstand to complete your bedroom.",
+        "images": ["image9.jpg", "image10.jpg"]
+      },
+      "size": "xs",
+      "color": "#8FBC8F",
+      "quantity": 20,
+      "brand": "Nightstands",
+      "tags": ["Handmade", "Teak", "Rustic"],
+      "status": "New"
+    },
+    {
+      "title": "Modern Oak Desk",
+      "subtitle": "Sleek Workspace",
+      "price": {
+        "old": 219.99,
+        "new": 189.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "A sleek oak desk for a modern and organized workspace.",
+        "images": ["image11.jpg", "image12.jpg"]
+      },
+      "size": "L",
+      "color": "#8B4513",
+      "quantity": 14,
+      "brand": "Desks",
+      "tags": ["Modern", "Oak", "Sleek"],
+      "status": "New"
+    },
+    {
+      "title": "Rustic Reclaimed Oak Bench",
+      "subtitle": "Farmhouse Style",
+      "price": {
+        "old": 129.99,
+        "new": 99.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "A farmhouse-style oak bench crafted from reclaimed wood.",
+        "images": ["image13.jpg", "image14.jpg"]
+      },
+      "size": "L",
+      "color": "#8B4513",
+      "quantity": 9,
+      "brand": "Benches",
+      "tags": ["Rustic", "Reclaimed Oak", "Farmhouse"],
+      "status": "New"
+    },
+    {
+      "title": "Mid-Century Maple Side Table",
+      "subtitle": "Timeless Design",
+      "price": {
+        "old": 69.99,
+        "new": 59.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "A timeless mid-century side table made from maple wood.",
+        "images": ["image15.jpg", "image16.jpg"]
+      },
+      "size": "xs",
+      "color": "#FFD700",
+      "quantity": 18,
+      "brand": "Side Tables",
+      "tags": ["Mid-Century", "Maple", "Timeless"],
+      "status": "-11%"
+    },
+    {
+      "title": "Elegant Walnut Dresser",
+      "subtitle": "Sophisticated Storage",
+      "price": {
+        "old": 349.99,
+        "new": 299.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "A sophisticated walnut wood dresser for your bedroom.",
+        "images": ["image17.jpg", "image18.jpg"]
+      },
+      "size": "XL",
+      "color": "#654321",
+      "quantity": 10,
+      "brand": "Dressers",
+      "tags": ["Elegant", "Walnut", "Sophisticated"],
+      "status": "New"
+    },
+    {
+      "title": "Oak Wine Rack Cabinet",
+      "subtitle": "Wine Enthusiast's Delight",
+      "price": {
+        "old": 249.99,
+        "new": 219.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "A wine rack cabinet made from oak for wine connoisseurs.",
+        "images": ["image19.jpg", "image20.jpg"]
+      },
+      "size": "L",
+      "color": "#8B4513",
+      "quantity": 13,
+      "brand": "Wine Cabinets",
+      "tags": ["Wine Rack", "Oak", "Wine Enthusiast"],
+      "status": "-11%"
+    },
+    {
+      "title": "Sustainable Acacia Dining Chair",
+      "subtitle": "Eco-Friendly Seating",
+      "price": {
+        "old": 59.99,
+        "new": 49.99
+      },
+      "ratings": 3,
+      "description": {
+        "text": "An eco-friendly dining chair made from sustainable acacia wood.",
+        "images": ["image21.jpg", "image22.jpg"]
+      },
+      "size": "xs",
+      "color": "#228B22",
+      "quantity": 22,
+      "brand": "Dining Chairs",
+      "tags": ["Sustainable", "Acacia", "Eco-Friendly"],
+      "status": "New"
+    },
+    {
+      "title": "Maple Hallway Console Table",
+      "subtitle": "Entryway Elegance",
+      "price": {
+        "old": 129.99,
+        "new": 109.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "An elegant maple console table for your hallway or entryway.",
+        "images": ["image23.jpg", "image24.jpg"]
+      },
+      "size": "L",
+      "color": "#FFD700",
+      "quantity": 16,
+      "brand": "Console Tables",
+      "tags": ["Maple", "Entryway", "Elegance"],
+      "status": "New"
+    },
+    {
+      "title": "Rustic Pine Bed Frame",
+      "subtitle": "Cozy Bedroom Retreat",
+      "price": {
+        "old": 299.99,
+        "new": 249.99
+      },
+      "ratings": 5,
+      "description": {
+        "text": "A cozy bed frame crafted from rustic pine wood for your bedroom.",
+        "images": ["image25.jpg", "image26.jpg"]
+      },
+      "size": "XL",
+      "color": "#A0522D",
+      "quantity": 11,
+      "brand": "Bed Frames",
+      "tags": ["Rustic", "Pine", "Cozy"],
+      "status": "New"
+    },
+    {
+      "title": "Solid Mahogany End Table",
+      "subtitle": "Classic Living Room Accent",
+      "price": {
+        "old": 89.99,
+        "new": 79.99
+      },
+      "ratings": 4,
+      "description": {
+        "text": "A classic end table made from solid mahogany wood.",
+        "images": ["image27.jpg", "image28.jpg"]
+      },
+      "size": "L",
+      "color": "#800000",
+      "quantity": 17,
+      "brand": "End Tables",
+      "tags": ["Solid Mahogany", "Classic", "Living Room"],
+      "status": "New"
+    }
+  ]
+  
