@@ -28,12 +28,20 @@ const Product = ({ product }) => {
             Like
           </Link>
         </div>
+        <div>
         <Link
           to={`/productDetails`}
           product={product}
           className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
           Details
         </Link>
+        <Link
+          to={`/updateProduct`}
+          product={product}
+          className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+          Update
+        </Link>
+        </div>
       </div>
 
       <div className="card card-compact p-0 min-w-min bg-gray-100 rounded-none">

@@ -22,23 +22,24 @@ const SignUp = () => {
         /* store data to the database */
         const user = { name, email, password, createdAt };
 
-        fetch("localhost:5000/user", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.insertedId)
-              alert("User added to the database successfully.");
-          });
+        // fetch("localhost:5000/user", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(user),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     if (data.insertedId)
+        //       alert("User added to the database successfully.");
+        //   });
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
