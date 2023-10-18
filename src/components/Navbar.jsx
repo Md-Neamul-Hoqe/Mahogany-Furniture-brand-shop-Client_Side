@@ -14,6 +14,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
+  // const { toggleTheme } = useTheme()
   const { theme, toggleTheme } = useContext(AuthContext);
 
   const NavLinks = (
@@ -64,7 +65,7 @@ const Navbar = () => {
         <a
           href="./"
           className="btn bg-transparent border-0 normal-case font-montserrat text-4xl">
-          <img width="60em" src="./src/assets/images/logo.svg" alt="logo" />
+          {/* <img width="60em" src="./src/assets/images/logo.svg" alt="logo" /> */}
           Mahogany
         </a>
       </div>

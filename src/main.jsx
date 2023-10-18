@@ -13,6 +13,7 @@ import AuthProviders from "./Providers/AuthProviders.jsx";
 // import Users from "./components/Users.jsx";
 import Error404 from "./Pages/Error404.jsx";
 import Shop from "./Pages/Shop";
+import ProductDetails from "./Pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +40,9 @@ const router = createBrowserRouter([
         //   ),
       },
       {
-        path: "/productDetails/:id",
-        element: <UpdateProduct />,
+        path: "/productDetails",
+        // path: "/productDetails/:id",
+        element: <ProductDetails />,
         // loader: ({ params }) =>
         //   fetch(
         //     `https://coffee-store-server-seven-gamma.vercel.app/coffee/${params.id}`

@@ -6,6 +6,7 @@ import { MdFavoriteBorder, MdShare } from "react-icons/md";
 import { TbArrowsLeftRight } from "react-icons/tb";
 
 const Product = ({ product }) => {
+  console.log(product);
   const { theme } = useContext(AuthContext);
   return (
     <div className="hero min-h-min">
@@ -27,7 +28,12 @@ const Product = ({ product }) => {
             Like
           </Link>
         </div>
-        <Link to={`/productDetails/`} className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">Details</Link>
+        <Link
+          to={`/productDetails`}
+          product={product}
+          className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+          Details
+        </Link>
       </div>
 
       <div className="card card-compact p-0 min-w-min bg-gray-100 rounded-none">

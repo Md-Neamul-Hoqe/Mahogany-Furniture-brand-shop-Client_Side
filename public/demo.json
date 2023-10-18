@@ -87,7 +87,7 @@
         "text": "A rustic teak wood nightstand to complete your bedroom.",
         "images": ["image9.jpg", "image10.jpg"]
       },
-      "size": "xs",
+      "size": "XS",
       "color": "#8FBC8F",
       "quantity": 20,
       "brand": "Nightstands",
@@ -144,7 +144,7 @@
         "text": "A timeless mid-century side table made from maple wood.",
         "images": ["image15.jpg", "image16.jpg"]
       },
-      "size": "xs",
+      "size": "XS",
       "color": "#FFD700",
       "quantity": 18,
       "brand": "Side Tables",
@@ -201,7 +201,7 @@
         "text": "An eco-friendly dining chair made from sustainable acacia wood.",
         "images": ["image21.jpg", "image22.jpg"]
       },
-      "size": "xs",
+      "size": "XS",
       "color": "#228B22",
       "quantity": 22,
       "brand": "Dining Chairs",
