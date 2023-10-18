@@ -11,23 +11,25 @@ const Cart = () => {
         </span>
       </div>
       <table className="mt-10 w-full">
-        <tr className="align-middle">
-          <td>
-            <img src="" alt="product icon" />
-          </td>
-          <td>
-            <h5>title</h5>
-            <br />
-            <h5>
-              <span>1</span> x <span className="text-primary">TK price</span>
-            </h5>
-          </td>
-          <td>
-            <button>
-              <RiCloseCircleFill className="text-2xl text-body" />
-            </button>
-          </td>
-        </tr>
+        <tbody>
+          <tr className="align-middle">
+            <td>
+              <img src="" alt="product icon" />
+            </td>
+            <td>
+              <h5>title</h5>
+              <br />
+              <h5>
+                <span>1</span> x <span className="text-primary">TK price</span>
+              </h5>
+            </td>
+            <td>
+              <button>
+                <RiCloseCircleFill className="text-2xl text-body" />
+              </button>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <div>
         <div className="w-full flex justify-between border-b-2 border-sub-heading py-5">

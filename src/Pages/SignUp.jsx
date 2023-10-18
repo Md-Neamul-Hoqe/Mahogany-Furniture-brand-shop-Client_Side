@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -19,23 +20,32 @@ const SignUp = () => {
 
         const createdAt = res.user?.metadata?.creationTime;
 
-        console.log(name, email, password, createdAt);
-        
-        /* store data to the database */
-        // const user = { name, email, password, createdAt };
+        // console.log(name, email, password, createdAt);
 
-        // fetch("localhost:5000/user", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(user),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     if (data.insertedId)
-        //       alert("User added to the database successfully.");
-        //   });
+        /* store data to the database */
+        const user = { name, email, password, createdAt };
+
+        fetch("http://127.0.0.1:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "User added to the database successfully.",
+                showClass: {
+                  popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                  popup: "animate__animated animate__fadeOutUp",
+                },
+              });
+            }
+          });
       })
       .catch((error) => {
         console.log(error);

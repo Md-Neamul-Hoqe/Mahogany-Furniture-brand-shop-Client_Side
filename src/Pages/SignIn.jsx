@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { setUser, signIn } = useContext(AuthContext);
@@ -24,19 +25,28 @@ const SignIn = () => {
           lastSignInAt: res.user?.metadata?.lastSignInTime,
         };
 
-        // fetch("localhost:5000/user", {
-        //   method: "PATCH",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(user),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //     if (data.modifiedCount)
-        //       alert("User updated to the database successfully.");
-        //   });
+        fetch("http://127.0.0.1:5000/users", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.modifiedCount) {
+              Swal.fire({
+                title: "User updated to the database successfully.",
+                showClass: {
+                  popup: "animate__animated animate__fadeInDown",
+                },
+                hideClass: {
+                  popup: "animate__animated animate__fadeOutUp",
+                },
+              });
+            }
+          });
       })
       .catch((error) => {
         console.log(error);
