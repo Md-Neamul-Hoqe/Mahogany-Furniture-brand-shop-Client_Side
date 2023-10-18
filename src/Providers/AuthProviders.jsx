@@ -13,6 +13,17 @@ const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [theme, setTheme] = useState(false);
+  // const [favorite, setFavorite] = useState(false);
+  const dataTheme = document.getElementsByTagName("html");
+
+  const toggleTheme = () => {
+    theme
+      ? dataTheme[0].setAttribute("data-theme", "light")
+      : dataTheme[0].setAttribute("data-theme", "dark");
+    return setTheme(!theme);
+  };
+
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -36,7 +47,9 @@ const AuthProviders = ({ children }) => {
     createUser,
     signInGoogle,
     loading,
-    setLoading
+    setLoading,
+    toggleTheme,
+    theme,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

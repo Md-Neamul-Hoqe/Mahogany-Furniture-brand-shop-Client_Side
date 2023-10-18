@@ -36,5 +36,5 @@ h4 {
 
 /* normal headings */
 h5 {
-  @apply font-semibold text-2xl text-title dark:text-white;
+  @apply font-semibold text-2xl text-title;
 }

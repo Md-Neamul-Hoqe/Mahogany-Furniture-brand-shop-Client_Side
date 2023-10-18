@@ -10,19 +10,11 @@ import {
   // MdFavoriteBorder,
   // MdFavorite,
 } from "react-icons/md";
-import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(false);
-  // const [favorite, setFavorite] = useState(false);
-  const dataTheme = document.getElementsByTagName("html");
-
-  const toggleTheme = () => {
-    theme
-      ? dataTheme[0].setAttribute("data-theme", "light")
-      : dataTheme[0].setAttribute("data-theme", "dark");
-    return setTheme(!theme);
-  };
+  const { theme, toggleTheme } = useContext(AuthContext);
 
   const NavLinks = (
     <>
@@ -45,7 +37,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-base-100 relative z-50 lg:px-20">
+    <nav className="navbar bg-base-100 relative z-50 xl:px-20">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -76,7 +68,7 @@ const Navbar = () => {
           Mahogany
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden xl:flex">
         <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
       </div>
       <div className="navbar-end">
