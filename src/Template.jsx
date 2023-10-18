@@ -6,7 +6,9 @@ const Template = () => {
   return (
     <div>
       <Navbar />
-      <Outlet />
+      <section className="min-h-screen">
+        <Outlet />
+      </section>
       <Footer />
     </div>
   );

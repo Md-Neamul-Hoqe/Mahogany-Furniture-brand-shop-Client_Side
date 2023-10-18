@@ -17,7 +17,6 @@ const Navbar = () => {
   // const [favorite, setFavorite] = useState(false);
   const dataTheme = document.getElementsByTagName("html");
 
-  console.log(dataTheme[0]);
   const toggleTheme = () => {
     theme
       ? dataTheme[0].setAttribute("data-theme", "light")
@@ -32,6 +31,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/addProduct">Add Product</NavLink>
+      </li>
+      <li>
+        <NavLink to="/shop">Shop</NavLink>
       </li>
       <li>
         <NavLink to="/signIn">Sign In</NavLink>
@@ -91,14 +93,14 @@ const Navbar = () => {
             <MdFavoriteBorder onClick={() => setFavorite(!favorite)} />
           )}
         </Link> */}
-        <Link className="btn bg-transparent border-0">
+        <button className="btn bg-transparent border-0">
           {theme ? (
             <MdOutlineDarkMode onClick={toggleTheme} />
           ) : (
             <MdDarkMode onClick={toggleTheme} />
           )}
-        </Link>
-        <Link className="btn bg-transparent border-0">
+        </button>
+        <Link to="/cart" className="btn bg-transparent border-0">
           <TbShoppingCart />
         </Link>
       </div>

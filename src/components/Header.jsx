@@ -13,10 +13,10 @@ const Header = () => {
         {/* right side */}
         <aside className="card flex-1 rounded-[10px] bg-primary-light">
           <div className="card-body">
-            <h5 className="font-semibold tracking-[3px]">New Arrival</h5>
-            <h2 className="card-title font-bold text-5xl leading-snug text-primary">
+            <small className="font-semibold tracking-[3px]">New Arrival</small>
+            <h1 className="text-primary">
               Discover Our <br /> New Collection
-            </h2>
+            </h1>
             <p>
               Introducing Our Stunning New Collection! Elevate your living
               spaces with our latest furniture arrivals. From sleek modern

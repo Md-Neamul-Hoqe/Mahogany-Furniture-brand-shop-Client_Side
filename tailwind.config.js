@@ -15,6 +15,7 @@ export default {
         'title': '#3A3A3A',
         'sub-title': '#898989',
         'old': '#B0B0B0',
+        'body': '#666666',
       },
       fontFamily: {
         'montserrat': "'Montserrat', sans-serif",

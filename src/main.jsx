@@ -6,11 +6,13 @@ import App from "./Home.jsx";
 import Template from "./Template.jsx";
 import AddProduct from "./Pages/AddProduct.jsx";
 import UpdateProduct from "./Pages/UpdateProduct.jsx";
+import CartDetails from "./Pages/CartDetails";
 import SignUp from "./Pages/SignUp.jsx";
 import SignIn from "./Pages/SignIn.jsx";
 import AuthProviders from "./Providers/AuthProviders.jsx";
 // import Users from "./components/Users.jsx";
 import Error404 from "./Pages/Error404.jsx";
+import Shop from "./Pages/Shop";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,24 @@ const router = createBrowserRouter([
         //   fetch(
         //     `https://coffee-store-server-seven-gamma.vercel.app/coffee/${params.id}`
         //   ),
+      },
+      {
+        path: "/productDetails/:id",
+        element: <UpdateProduct />,
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `https://coffee-store-server-seven-gamma.vercel.app/coffee/${params.id}`
+        //   ),
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
+        loader: () => fetch(`./demo.json`),
+      },
+      {
+        path: "/cart",
+        element: <CartDetails />,
+        loader: () => fetch(`./demo.json`),
       },
       {
         path: "/SignUp",
