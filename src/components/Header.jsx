@@ -17,7 +17,13 @@ const Header = () => {
             <h2 className="card-title font-bold text-5xl leading-snug text-primary">
               Discover Our <br /> New Collection
             </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p>
+              Introducing Our Stunning New Collection! Elevate your living
+              spaces with our latest furniture arrivals. From sleek modern
+              designs to timeless classics, our pieces are crafted to
+              perfection. Explore the perfect blend of style and comfort.
+              Discover your next favorite piece today!
+            </p>
             <div className="card-actions justify-start mt-10">
               <button className="btn btn-lg rounded-none text-white bg-primary">
                 Buy Now

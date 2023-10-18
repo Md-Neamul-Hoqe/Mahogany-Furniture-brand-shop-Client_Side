@@ -15,3 +15,33 @@
 /* .btn {
   @apply capitalize;
 } */
+
+/* home page banner heading */
+h1 {
+  @apply font-bold;
+  @apply text-[52px];
+  @apply leading-[65px];
+}
+
+/* shop page banner heading */
+h2 {
+  @apply font-medium;
+  @apply text-5xl;
+}
+
+/* Details page title */
+h3 {
+  @apply text-[48px];
+}
+
+/* home page section title */
+h4 {
+  @apply font-bold;
+  @apply text-[32px];
+}
+
+/* normal headings */
+h5 {
+  @apply font-medium;
+  @apply text-2xl;
+}

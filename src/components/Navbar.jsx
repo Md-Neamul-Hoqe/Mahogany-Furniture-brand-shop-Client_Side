@@ -69,8 +69,8 @@ const Navbar = () => {
         </div>
         <a
           href="./"
-          className="btn bg-transparent normal-case font-montserrat text-4xl">
-          <img src="logo" alt="logo" />
+          className="btn bg-transparent border-0 normal-case font-montserrat text-4xl">
+          <img width="60em" src="./src/assets/images/logo.svg" alt="logo" />
           Mahogany
         </a>
       </div>
