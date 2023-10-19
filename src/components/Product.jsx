@@ -7,8 +7,8 @@ import { TbArrowsLeftRight } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
 
 const Product = ({ product }) => {
-  console.log(product._id);
   const { theme } = useContext(AuthContext);
+
   return (
     <div className="hero min-h-min">
       <div className="hero-overlay hidden bg-opacity-70 z-50 h-full flex-col items-center justify-center">
@@ -45,12 +45,12 @@ const Product = ({ product }) => {
         </div>
       </div>
 
-      <div className="card card-compact p-0 min-w-min bg-gray-100 rounded-none">
+      <div className="card card-compact justify-start p-0 min-w-min h-full bg-gray-100 rounded-none">
         <figure>
           <img
             src={product?.description?.photo}
             alt={product?.subtitle}
-            className="rounded-none"
+            className="rounded-none h-72 w-full"
           />
         </figure>
         <div className="card-body text-start">

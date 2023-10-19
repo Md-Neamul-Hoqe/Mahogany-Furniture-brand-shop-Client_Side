@@ -49,6 +49,12 @@ const router = createBrowserRouter([
         loader: () => fetch(`http://127.0.0.1:5000/products`),
       },
       {
+        path: "/shop/:brand",
+        element: <Shop />,
+        loader: ({ params }) =>
+          fetch(`http://127.0.0.1:5000/shop/${params.brand}`),
+      },
+      {
         path: "/cart",
         element: <CartDetails />,
         loader: () => fetch(`./demo.json`),

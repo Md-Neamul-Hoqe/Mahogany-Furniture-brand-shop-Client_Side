@@ -6,7 +6,6 @@ const ProductDetails = () => {
   const product = useLoaderData();
 
   const {
-    _id,
     title,
     subtitle,
     price,
@@ -22,7 +21,7 @@ const ProductDetails = () => {
   //
   // https://i.ibb.co/VTBqTTx/blog.png
 
-  // https://i.ibb.co/BKksZkq/Dining-1.png
+  // 
   // https://i.ibb.co/z5KD6Z1/furniture.png
   // https://i.ibb.co/L0VhH8G/furniture-1.png
   // https://i.ibb.co/2jRVqjx/Image-living-room.png
@@ -152,31 +151,30 @@ const ProductDetails = () => {
               <tr>
                 <td>SKU</td>
                 <td>:</td>
-                <td>SS0001</td>
+                <td> SS0001</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>:</td>
+                <td> {type}</td>
               </tr>
               <tr>
                 <td>Brand</td>
                 <td>:</td>
-                <td>{brand}</td>
+                <td> {brand}</td>
               </tr>
-              {tags?.length && (
-                <tr>
-                  <td>Tags</td>
-                  <td>:</td>
-                  <td>
-                    {tags?.map((element, idx) => {
-                      <li key={idx}>{element}</li>;
-                    })}
-                  </td>
-                </tr>
-              )}
+              <tr>
+                <td>Tags</td>
+                <td>:</td>
+                <td> {tags.join(", ")}</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
       <section className="border-t-2 w-full flex flex-col items-center gap-5 pt-10 mt-10">
         <h2 className="text-title">Description</h2>
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-around gap-6">
           {description?.images.map((image, idx) => (
             <img key={idx} src={image} alt={subtitle} />
           ))}

@@ -23,9 +23,23 @@ const Home = () => {
       if (!uniqueBrands.includes(theBrand)) {
         /* update brands */
         uniqueBrands.push(theBrand);
+        // const brandInfo = {
+        //   brand: theBrand,
+        //   photo: product?.description?.photo,
+        // };
 
         /* update products */
         uniqueBrandedProducts.push(product);
+
+        // fetch("http://127.0.0.1:5000/products", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(brandInfo),
+        // })
+        //   .then((res) => res.json())
+        //   .then(console.log);
       }
     });
 
@@ -39,7 +53,7 @@ const Home = () => {
       <Products products={products} />
       <Stat />
       <Helmet>
-        <title>{'Mahogany | Decorate your house as you choose.'}</title>
+        <title>{"Mahogany | Decorate your house as you choose."}</title>
       </Helmet>
     </>
   );

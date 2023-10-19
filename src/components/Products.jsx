@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import Product from "./Product";
 
 const Products = ({ products }) => {
-  // const products = useLoaderData();
-  // const [products, setProducts] = useState(loadedData);
 
   return (
     <section>
