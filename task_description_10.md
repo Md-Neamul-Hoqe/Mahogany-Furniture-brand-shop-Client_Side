@@ -84,9 +84,6 @@ On the Login page, display errors when:
 ### :gift: Bonus Requirements:
 
 1. **Commits & readme:**
-
-   - Minimum 10 meaningful git commits on the client-side repository.
-   - Minimum 5 meaningful commits on the server-side repository.
    - Create a readme for client-side and write about your project (at least 5 bullet points). ** Remember to add your client-side live link to your website here.**
 
 2. After reloading the page of a private route, the user should not be redirected to the login page.

@@ -5,7 +5,7 @@ const Header = () => {
       style={{
         backgroundImage: 'url("https://i.ibb.co/ryyFs32/banner-image.jpg")',
         backgroundOrigin: "center",
-        backgroundSize: "100vw",
+        backgroundSize: "100vw 100%",
       }}>
       <div className="hero-content w-full flex-col lg:flex-row">
         <aside className="card flex-1"></aside>

@@ -4,8 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 const Shop = () => {
   const products = useLoaderData();
-
-  console.log(products);
+  console.log(typeof products);
   return (
     <section>
       {/* Banner Section */}
@@ -37,23 +36,33 @@ const Shop = () => {
       </section>
 
       {/* Product Section */}
-      {products.length ? (
+      {!products?.length || typeof products === "string" ? (
+        typeof products === "string" ? (
+          <div className="min-h-screen flex justify-center items-center">
+            <span className="loading loading-infinity w-40 text-primary"></span>
+          </div>
+        ) : (
+          <div className="min-h-[calc(100vw/3)] flex flex-col items-center justify-center gap-5">
+            <h1>Sorry! No Such Products Found.</h1>
+            <p>
+              Are you want to order to make the product? Contact:{" "}
+              <Link to={`tel:+8801700000000`} className="text-primary">
+                01700-000-000
+              </Link>
+            </p>
+            <Link
+              to={"/"}
+              className="btn capitalize text-primary border-primary">
+              Go to home
+            </Link>
+          </div>
+        )
+      ) : (
         <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 max-w-5xl mx-auto">
           {products.map((product, idx) => (
             <Product key={idx} product={product} />
           ))}
         </section>
-      ) : (
-        <div className="min-h-[calc(100vw/3)] flex flex-col items-center justify-center gap-5">
-          <h1>Sorry! No Such Products Found.</h1>
-          <p>
-            Are you want to order to make the product? Contact:{" "}
-            <Link to={`tel:+8801700000000`} className="text-primary">
-              01700-000-000
-            </Link>
-          </p>
-          <Link to={"/"} className="btn capitalize text-primary border-primary">Go to home</Link>
-        </div>
       )}
 
       {/* Title */}

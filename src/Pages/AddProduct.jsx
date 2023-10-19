@@ -15,7 +15,7 @@ const AddProduct = () => {
     const details = Form.details.value;
     const photo = Form.photo.value;
 
-    const coffeeInfo = {
+    const furnitureInfo = {
       title,
       subtitle,
       brand,
@@ -25,14 +25,12 @@ const AddProduct = () => {
       photo,
     };
 
-    console.log(coffeeInfo);
-
-    fetch("http://127.0.0.1:5000/products", {
+    fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(coffeeInfo),
+      body: JSON.stringify(furnitureInfo),
     })
       .then((res) => res.json())
       .then((data) => {

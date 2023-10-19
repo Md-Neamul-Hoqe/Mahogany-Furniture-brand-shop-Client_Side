@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signInGoogle } = useContext(AuthContext);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const SignUp = () => {
         /* store data to the database */
         const user = { name, email, password, createdAt };
 
-        fetch("http://127.0.0.1:5000/users", {
+        fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -53,6 +53,11 @@ const SignUp = () => {
       });
   };
 
+  const handleSignInGoogle = () => {
+    signInGoogle()
+      .then((res) => console.log(res.user))
+      .catch(console.error);
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -99,11 +104,18 @@ const SignUp = () => {
                 Sign Up
               </button>
             </div>
+            <div className="form-control mt-6">
+              <button
+                onClick={handleSignInGoogle}
+                className="btn border-primary capitalize text-primary">
+                 Sign In With Google
+              </button>
+            </div>
           </form>
         </div>
       </div>
       <Helmet>
-        <title>{'Mahogany | Sign Up'}</title>
+        <title>{"Mahogany | Sign Up"}</title>
       </Helmet>
     </div>
   );

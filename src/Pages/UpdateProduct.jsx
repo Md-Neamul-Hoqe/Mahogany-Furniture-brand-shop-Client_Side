@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const UpdateProduct = ({ product }) => {
+const UpdateProduct = () => {
+  const product = useLoaderData();
+
+  // console.log(typeof product);
+
   const handleUpdateProduct = (e) => {
     e.preventDefault();
 
@@ -16,7 +21,8 @@ const UpdateProduct = ({ product }) => {
     const details = Form.details.value;
     const photo = Form.photo.value;
 
-    const coffeeInfo = {
+    const furnitureInfo = {
+      id: product._id,
       title,
       subtitle,
       brand,
@@ -26,19 +32,18 @@ const UpdateProduct = ({ product }) => {
       photo,
     };
 
-    console.log(coffeeInfo);
+    console.log(furnitureInfo);
 
-    fetch("http://127.0.0.1:5000/products", {
+    fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(coffeeInfo),
+      body: JSON.stringify(furnitureInfo),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
             title: "The product updated successfully.",
             showClass: {
@@ -54,123 +59,129 @@ const UpdateProduct = ({ product }) => {
 
   return (
     <div className="hero min-h-screen bg-transparent">
-      <div className="hero-content">
-        <div className="card w-full max-w-4xl bg-transparent">
-          <form onSubmit={handleUpdateProduct} className="card-body bg-gray">
-            <div className="text-center">
-              <h3>Update The Product: {product.title} </h3>
-            </div>
-            <div className="flex flex-col gap-6">
-              <div className="flex max-lg:flex-col gap-6">
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">Title</h4>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Product Title"
-                    name="title"
-                    className="input input-bordered"
-                    required
-                    defaultValue={product.title}
-                  />
-                </div>
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">Sub Title</h4>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Product Sub Title"
-                    name="subtitle"
-                    className="input input-bordered"
-                    defaultValue={product.subtitle}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="flex max-lg:flex-col gap-6">
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">Brand</h4>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Product Brand"
-                    name="brand"
-                    className="input input-bordered"
-                    required
-                    defaultValue={product.brand}
-                  />
-                </div>
-
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">Type</h4>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Product Type"
-                    name="type"
-                    className="input input-bordered"
-                    required
-                    defaultValue={product.type}
-                  />
-                </div>
-              </div>
-              <div className="flex max-lg:flex-col gap-6">
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">tags</h4>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Product tags"
-                    name="tags"
-                    className="input input-bordered"
-                    required
-                    defaultValue={product.tags}
-                  />
-                </div>
-
-                <div className="form-control flex-1">
-                  <label className="label">
-                    <h4 className="label-text">Details</h4>
-                  </label>
-                  <textarea
-                    type="text"
-                    placeholder="Enter Product Details"
-                    name="details"
-                    className="textarea textarea-bordered"
-                    required
-                    defaultValue={product?.description?.text}
-                  />
-                </div>
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <h4 className="label-text">Photo</h4>
-                </label>
-                <input
-                  type="url"
-                  placeholder="Enter Photo URL"
-                  name="photo"
-                  className="input input-bordered"
-                  defaultValue={product?.description?.photo}
-                  required
-                />
-              </div>
-              <div className="form-control">
-                <button
-                  type="submit"
-                  className="btn rounded-[5px] border-primary text-primary bg-white capitalize font-rancho text-2xl">
-                  Add Product
-                </button>
-              </div>
-            </div>
-          </form>
+      {typeof product === "string" ? (
+        <div className="min-h-screen flex justify-center items-center">
+          <span className="loading loading-infinity w-40 text-primary"></span>
         </div>
-      </div>
+      ) : (
+        <div className="hero-content">
+          <div className="card w-full max-w-4xl bg-transparent">
+            <form onSubmit={handleUpdateProduct} className="card-body bg-gray">
+              <div className="text-center my-5">
+                <h4>Update The Product: {product.title} </h4>
+              </div>
+              <div className="flex flex-col gap-6">
+                <div className="flex max-lg:flex-col gap-6">
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Title</h4>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Product Title"
+                      name="title"
+                      className="input input-bordered"
+                      required
+                      defaultValue={product.title}
+                    />
+                  </div>
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Sub Title</h4>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Product Sub Title"
+                      name="subtitle"
+                      className="input input-bordered"
+                      defaultValue={product.subtitle}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="flex max-lg:flex-col gap-6">
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Brand</h4>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Product Brand"
+                      name="brand"
+                      className="input input-bordered"
+                      required
+                      defaultValue={product.brand}
+                    />
+                  </div>
+
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Type</h4>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Product Type"
+                      name="type"
+                      className="input input-bordered"
+                      required
+                      defaultValue={product.type}
+                    />
+                  </div>
+                </div>
+                <div className="flex max-lg:flex-col gap-6">
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">tags</h4>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Product tags"
+                      name="tags"
+                      className="input input-bordered"
+                      required
+                      defaultValue={product.tags}
+                    />
+                  </div>
+
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Details</h4>
+                    </label>
+                    <textarea
+                      type="text"
+                      placeholder="Enter Product Details"
+                      name="details"
+                      className="textarea textarea-bordered"
+                      required
+                      defaultValue={product?.description?.text}
+                    />
+                  </div>
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <h4 className="label-text">Photo</h4>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="Enter Photo URL"
+                    name="photo"
+                    className="input input-bordered"
+                    defaultValue={product?.description?.photo}
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <button
+                    type="submit"
+                    className="btn rounded-[5px] border-primary text-primary bg-white capitalize font-rancho text-2xl">
+                    Add Product
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
       <Helmet>
         <title>{`Mahogany | Update ${product.title}`}</title>
       </Helmet>

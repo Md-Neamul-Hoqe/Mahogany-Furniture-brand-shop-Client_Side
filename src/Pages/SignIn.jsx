@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const SignIn = () => {
-  const { setUser, signIn } = useContext(AuthContext);
+  const { setUser, signIn, signInGoogle } = useContext(AuthContext);
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -15,18 +15,17 @@ const SignIn = () => {
 
     signIn(email, password)
       .then((res) => {
+        /* User logged in successfully */
         setUser(res.user);
-        /* New user has been created */
 
-        // const lastSignInAt = ;
-        // console.log(res.user);
-        /* store data to the database */
+        /* data to be updated */
         const user = {
           email,
           lastSignInAt: res.user?.metadata?.lastSignInTime,
         };
 
-        fetch("http://127.0.0.1:5000/users", {
+        /* Update user information */
+        fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -38,7 +37,7 @@ const SignIn = () => {
             console.log(data);
             if (data.modifiedCount) {
               Swal.fire({
-                title: "User updated to the database successfully.",
+                title: "User information updated to the database successfully.",
                 showClass: {
                   popup: "animate__animated animate__fadeInDown",
                 },
@@ -54,6 +53,11 @@ const SignIn = () => {
       });
   };
 
+  const handleSignInGoogle = () => {
+    signInGoogle()
+      .then((res) => console.log(res.user))
+      .catch(console.error);
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -93,11 +97,19 @@ const SignIn = () => {
                 Sign In
               </button>
             </div>
+            <div className="form-control mt-6">
+              <button
+                onClick={handleSignInGoogle}
+                className="btn text-primary border-primary capitalize">
+                Sign In With Google
+              </button>
+            </div>
           </form>
         </div>
       </div>
+
       <Helmet>
-        <title>{'Mahogany | Sign In'}</title>
+        <title>{"Mahogany | Sign In"}</title>
       </Helmet>
     </div>
   );

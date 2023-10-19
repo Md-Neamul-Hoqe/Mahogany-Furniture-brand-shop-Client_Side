@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-        loader: () => fetch(`http://127.0.0.1:5000/products`),
+        loader: () => fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products`),
       },
       {
         path: "/addProduct",
@@ -34,25 +34,25 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        loader: ({ params }) =>
-          fetch(`http://127.0.0.1:5000/products/${params.id}`),
+        loader: ({ params }) =>{ console.log(params);
+          return fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products/${params.id}`)},
       },
       {
         path: "/productDetails/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`http://127.0.0.1:5000/products/${params.id}`),
+          fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products/${params.id}`),
       },
       {
         path: "/shop",
         element: <Shop />,
-        loader: () => fetch(`http://127.0.0.1:5000/products`),
+        loader: () => fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products`),
       },
       {
         path: "/shop/:brand",
         element: <Shop />,
         loader: ({ params }) =>
-          fetch(`http://127.0.0.1:5000/shop/${params.brand}`),
+          fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/shop/${params.brand}`),
       },
       {
         path: "/cart",
