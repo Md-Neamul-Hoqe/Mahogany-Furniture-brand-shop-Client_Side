@@ -1,31 +1,34 @@
+import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
+
 const UpdateProduct = () => {
   const handleUpdateProduct = (e) => {
     e.preventDefault();
 
     const Form = e.target;
 
-    const name = Form.name.value;
-    const chef = Form.chef.value;
-    const supplier = Form.supplier.value;
-    const taste = Form.taste.value;
-    const category = Form.category.value;
+    const title = Form.title.value;
+    const subtitle = Form.subtitle.value;
+    const brand = Form.brand.value;
+    const type = Form.type.value;
+    const tags = Form.tags.value;
     const details = Form.details.value;
     const photo = Form.photo.value;
 
     const coffeeInfo = {
-      name,
-      chef,
-      supplier,
-      taste,
-      category,
+      title,
+      subtitle,
+      brand,
+      type,
+      tags,
       details,
       photo,
     };
 
     console.log(coffeeInfo);
 
-    fetch("/product", {
-      method: "POST",
+    fetch("http://127.0.0.1:5000/products", {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,7 +37,17 @@ const UpdateProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) alert("A new tea added.");
+        if (data.insertedId) {
+          Swal.fire({
+            title: "The product updated successfully.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+        }
       });
   };
 
@@ -55,7 +68,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     placeholder="Enter Product Title"
-                    name="name"
+                    name="title"
                     className="input input-bordered"
                     required
                   />
@@ -67,7 +80,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     placeholder="Enter Product Sub Title"
-                    name="chef"
+                    name="subtitle"
                     className="input input-bordered"
                     required
                   />
@@ -81,7 +94,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     placeholder="Enter Product Brand"
-                    name="supplier"
+                    name="brand"
                     className="input input-bordered"
                     required
                   />
@@ -94,7 +107,7 @@ const UpdateProduct = () => {
                   <input
                     type="text"
                     placeholder="Enter Product Type"
-                    name="taste"
+                    name="type"
                     className="input input-bordered"
                     required
                   />
@@ -150,6 +163,9 @@ const UpdateProduct = () => {
           </form>
         </div>
       </div>
+      <Helmet>
+        <title>Mahogany | Update {name | Product._id}</title>
+      </Helmet>
     </div>
   );
 };

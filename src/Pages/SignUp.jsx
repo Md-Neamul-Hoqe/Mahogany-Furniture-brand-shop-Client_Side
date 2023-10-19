@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -101,6 +102,9 @@ const SignUp = () => {
           </form>
         </div>
       </div>
+      <Helmet>
+        <title>Mahogany | Sign Up</title>
+      </Helmet>
     </div>
   );
 };

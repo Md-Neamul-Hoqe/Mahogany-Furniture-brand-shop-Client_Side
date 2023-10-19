@@ -14,16 +14,17 @@ import AuthProviders from "./Providers/AuthProviders.jsx";
 import Error404 from "./Pages/Error404.jsx";
 import Shop from "./Pages/Shop";
 import ProductDetails from "./Pages/ProductDetails";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Template />,
+    errorElement: <Error404 />,
     children: [
       {
         path: "/",
         element: <App />,
-        errorElement: <Error404 />,
         // loader: () =>
         //   fetch("https://coffee-store-server-seven-gamma.vercel.app/coffee"),
       },
@@ -77,8 +78,10 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProviders>
-      <RouterProvider router={router} />
-    </AuthProviders>
+    <HelmetProvider>
+      <AuthProviders>
+        <RouterProvider router={router} />
+      </AuthProviders>
+    </HelmetProvider>
   </React.StrictMode>
 );

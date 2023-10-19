@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Product from "../components/Product";
+import { Helmet } from "react-helmet-async";
 
 const Shop = () => {
   const products = useLoaderData();
@@ -37,6 +38,9 @@ const Shop = () => {
           <Product key={idx} product={product} />
         ))}
       </section>
+      <Helmet>
+        <title>Mahogany | Shop</title>
+      </Helmet>
     </section>
   );
 };

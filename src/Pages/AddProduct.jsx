@@ -1,30 +1,33 @@
+import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAddProduct = (e) => {
     e.preventDefault();
 
     const Form = e.target;
 
-    const name = Form.name.value;
-    const chef = Form.chef.value;
-    const supplier = Form.supplier.value;
-    const taste = Form.taste.value;
-    const category = Form.category.value;
+    const title = Form.title.value;
+    const subtitle = Form.subtitle.value;
+    const brand = Form.brand.value;
+    const type = Form.type.value;
+    const tags = Form.tags.value;
     const details = Form.details.value;
     const photo = Form.photo.value;
 
     const coffeeInfo = {
-      name,
-      chef,
-      supplier,
-      taste,
-      category,
+      title,
+      subtitle,
+      brand,
+      type,
+      tags,
       details,
       photo,
     };
 
     console.log(coffeeInfo);
 
-    fetch("/product", {
+    fetch("http://127.0.0.1:5000/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,9 +36,19 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        if (data.insertedId) alert("A new tea added.");
-      });
+        if (data.insertedId) {
+          Swal.fire({
+            title: "A new product added successfully.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+        }
+      })
+      .catch(console.error);
   };
 
   return (
@@ -150,6 +163,9 @@ const AddProduct = () => {
           </form>
         </div>
       </div>
+      <Helmet>
+        <title>Mahogany | Add Product</title>
+      </Helmet>
     </div>
   );
 };

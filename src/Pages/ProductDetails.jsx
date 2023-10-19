@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
+import { Helmet } from "react-helmet-async";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -158,6 +159,9 @@ const ProductDetails = () => {
           for a sound.
         </p>
       </section>
+      <Helmet>
+        <title>Mahogany | Details - {title}</title>
+      </Helmet>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const CartDetails = () => {
   return (
     <div className="flex max-xl:flex-col">
@@ -31,6 +33,9 @@ const CartDetails = () => {
         <h5>Total <span className="text-primary">price</span></h5>
         <button className="btn">Check Out</button>
       </div>
+      <Helmet>
+        <title>Mahogany | Shopping Cart</title>
+      </Helmet>
     </div>
   );
 };

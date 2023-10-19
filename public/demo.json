@@ -1,269 +1,458 @@
 [
-    {
-      "title": "Rustic Oak Dining Table",
-      "subtitle": "Handcrafted Solid Wood",
-      "price": {
-        "old": 799.99,
-        "new": 599.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "A beautifully crafted oak dining table for family gatherings.",
-        "images": ["image1.jpg", "image2.jpg"]
-      },
-      "size": "L",
-      "color": "#8B4513",
-      "quantity": 10,
-      "brand": "Dining Tables",
-      "tags": ["Rustic", "Handcrafted", "Solid Wood"],
-      "status": "New"
+  {
+    "title": "Luxury Living Dining Table",
+    "subtitle": "Elegance for your dining room",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 799,
+      "new": 699
     },
-    {
-      "title": "Contemporary Maple Bookshelf",
-      "subtitle": "Minimalist Design",
-      "price": {
-        "old": 299.99,
-        "new": 249.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "A sleek and modern bookshelf made from maple wood.",
-        "images": ["image3.jpg", "image4.jpg"]
-      },
-      "size": "XL",
-      "color": "#FFD700",
-      "quantity": 15,
-      "brand": "Bookshelves",
-      "tags": ["Contemporary", "Maple", "Minimalist"],
-      "status": "-11%"
+    "ratings": 5,
+    "description": {
+      "text": "Experience elegance with our Luxury Living dining table. Crafted from mahogany, it adds a touch of sophistication to your dining room.",
+      "images": ["https://example.com/luxury-living-dining-table.jpg"],
+      "photo": "https://example.com/luxury-living-dining-table.jpg"
     },
-    {
-      "title": "Vintage Pine Coffee Table",
-      "subtitle": "Antique Charm",
-      "price": {
-        "old": 149.99,
-        "new": 129.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "A charming coffee table made from reclaimed pine wood.",
-        "images": ["image5.jpg", "image6.jpg"]
-      },
-      "size": "L",
-      "color": "#A0522D",
-      "quantity": 12,
-      "brand": "Coffee Tables",
-      "tags": ["Vintage", "Pine", "Antique"],
-      "status": "New"
+    "quantity": 12,
+    "type": "Dining Table",
+    "tags": ["Mahogany", "Elegant Design", "Sophisticated"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living Bed Frame",
+    "subtitle": "Sleep in luxury and comfort",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 999,
+      "new": 899
     },
-    {
-      "title": "Classic Cherry Wardrobe",
-      "subtitle": "Elegant Storage",
-      "price": {
-        "old": 499.99,
-        "new": 449.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "An elegant cherry wood wardrobe for your bedroom.",
-        "images": ["image7.jpg", "image8.jpg"]
-      },
-      "size": "XL",
-      "color": "#800000",
-      "quantity": 8,
-      "brand": "Wardrobes",
-      "tags": ["Classic", "Cherry", "Elegant"],
-      "status": "New"
+    "ratings": 4,
+    "description": {
+      "text": "Sleep like royalty with our Luxury Living bed frame. Its rich mahogany wood and plush design ensure a night of luxurious sleep.",
+      "images": ["https://example.com/luxury-living-bed-frame.jpg"],
+      "photo": "https://example.com/luxury-living-bed-frame.jpg"
     },
-    {
-      "title": "Handmade Teak Nightstand",
-      "subtitle": "Rustic Bedroom Decor",
-      "price": {
-        "old": 79.99,
-        "new": 69.99
-      },
-      "ratings": 3,
-      "description": {
-        "text": "A rustic teak wood nightstand to complete your bedroom.",
-        "images": ["image9.jpg", "image10.jpg"]
-      },
-      "size": "XS",
-      "color": "#8FBC8F",
-      "quantity": 20,
-      "brand": "Nightstands",
-      "tags": ["Handmade", "Teak", "Rustic"],
-      "status": "New"
+    "quantity": 18,
+    "type": "Bed Frame",
+    "tags": ["Mahogany", "Luxurious", "Comfortable"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living Sideboard",
+    "subtitle": "Elegance for your dining room",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 699,
+      "new": 599
     },
-    {
-      "title": "Modern Oak Desk",
-      "subtitle": "Sleek Workspace",
-      "price": {
-        "old": 219.99,
-        "new": 189.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "A sleek oak desk for a modern and organized workspace.",
-        "images": ["image11.jpg", "image12.jpg"]
-      },
-      "size": "L",
-      "color": "#8B4513",
-      "quantity": 14,
-      "brand": "Desks",
-      "tags": ["Modern", "Oak", "Sleek"],
-      "status": "New"
+    "ratings": 4,
+    "description": {
+      "text": "Our mahogany sideboard by Luxury Living adds elegance to your dining room. It provides ample storage and complements your dining area's decor.",
+      "images": ["https://example.com/luxury-living-sideboard.jpg"],
+      "photo": "https://example.com/luxury-living-sideboard.jpg"
     },
-    {
-      "title": "Rustic Reclaimed Oak Bench",
-      "subtitle": "Farmhouse Style",
-      "price": {
-        "old": 129.99,
-        "new": 99.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "A farmhouse-style oak bench crafted from reclaimed wood.",
-        "images": ["image13.jpg", "image14.jpg"]
-      },
-      "size": "L",
-      "color": "#8B4513",
-      "quantity": 9,
-      "brand": "Benches",
-      "tags": ["Rustic", "Reclaimed Oak", "Farmhouse"],
-      "status": "New"
+    "quantity": 15,
+    "type": "Sideboard",
+    "tags": ["Mahogany", "Elegant Design", "Storage Solution"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living Writing Desk",
+    "subtitle": "Style and productivity in one",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 349,
+      "new": 299
     },
-    {
-      "title": "Mid-Century Maple Side Table",
-      "subtitle": "Timeless Design",
-      "price": {
-        "old": 69.99,
-        "new": 59.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "A timeless mid-century side table made from maple wood.",
-        "images": ["image15.jpg", "image16.jpg"]
-      },
-      "size": "XS",
-      "color": "#FFD700",
-      "quantity": 18,
-      "brand": "Side Tables",
-      "tags": ["Mid-Century", "Maple", "Timeless"],
-      "status": "-11%"
+    "ratings": 4,
+    "description": {
+      "text": "The Luxury Living writing desk combines style and productivity. It's perfect for work or study, offering a spacious surface while enhancing your workspace's visual appeal.",
+      "images": ["https://example.com/luxury-living-writing-desk.jpg"],
+      "photo": "https://example.com/luxury-living-writing-desk.jpg"
     },
-    {
-      "title": "Elegant Walnut Dresser",
-      "subtitle": "Sophisticated Storage",
-      "price": {
-        "old": 349.99,
-        "new": 299.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "A sophisticated walnut wood dresser for your bedroom.",
-        "images": ["image17.jpg", "image18.jpg"]
-      },
-      "size": "XL",
-      "color": "#654321",
-      "quantity": 10,
-      "brand": "Dressers",
-      "tags": ["Elegant", "Walnut", "Sophisticated"],
-      "status": "New"
+    "quantity": 22,
+    "type": "Writing Desk",
+    "tags": ["Mahogany", "Elegant Design", "Productive"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living Wardrobe",
+    "subtitle": "Luxury storage for your bedroom",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 899,
+      "new": 799
     },
-    {
-      "title": "Oak Wine Rack Cabinet",
-      "subtitle": "Wine Enthusiast's Delight",
-      "price": {
-        "old": 249.99,
-        "new": 219.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "A wine rack cabinet made from oak for wine connoisseurs.",
-        "images": ["image19.jpg", "image20.jpg"]
-      },
-      "size": "L",
-      "color": "#8B4513",
-      "quantity": 13,
-      "brand": "Wine Cabinets",
-      "tags": ["Wine Rack", "Oak", "Wine Enthusiast"],
-      "status": "-11%"
+    "ratings": 4,
+    "description": {
+      "text": "Our mahogany wardrobe by Luxury Living is designed to add luxury to your bedroom. It offers spacious storage while exuding an elegant charm.",
+      "images": ["https://example.com/luxury-living-wardrobe.jpg"],
+      "photo": "https://example.com/luxury-living-wardrobe.jpg"
     },
-    {
-      "title": "Sustainable Acacia Dining Chair",
-      "subtitle": "Eco-Friendly Seating",
-      "price": {
-        "old": 59.99,
-        "new": 49.99
-      },
-      "ratings": 3,
-      "description": {
-        "text": "An eco-friendly dining chair made from sustainable acacia wood.",
-        "images": ["image21.jpg", "image22.jpg"]
-      },
-      "size": "XS",
-      "color": "#228B22",
-      "quantity": 22,
-      "brand": "Dining Chairs",
-      "tags": ["Sustainable", "Acacia", "Eco-Friendly"],
-      "status": "New"
+    "quantity": 10,
+    "type": "Wardrobe",
+    "tags": ["Mahogany", "Elegant Design", "Spacious"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living End Table",
+    "subtitle": "Luxury in every detail",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 199,
+      "new": 179
     },
-    {
-      "title": "Maple Hallway Console Table",
-      "subtitle": "Entryway Elegance",
-      "price": {
-        "old": 129.99,
-        "new": 109.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "An elegant maple console table for your hallway or entryway.",
-        "images": ["image23.jpg", "image24.jpg"]
-      },
-      "size": "L",
-      "color": "#FFD700",
-      "quantity": 16,
-      "brand": "Console Tables",
-      "tags": ["Maple", "Entryway", "Elegance"],
-      "status": "New"
+    "ratings": 5,
+    "description": {
+      "text": "Our mahogany end table by Luxury Living is the epitome of luxury. Its intricate design and rich finish make it a perfect accent piece for your living room.",
+      "images": ["https://example.com/luxury-living-end-table.jpg"],
+      "photo": "https://example.com/luxury-living-end-table.jpg"
     },
-    {
-      "title": "Rustic Pine Bed Frame",
-      "subtitle": "Cozy Bedroom Retreat",
-      "price": {
-        "old": 299.99,
-        "new": 249.99
-      },
-      "ratings": 5,
-      "description": {
-        "text": "A cozy bed frame crafted from rustic pine wood for your bedroom.",
-        "images": ["image25.jpg", "image26.jpg"]
-      },
-      "size": "XL",
-      "color": "#A0522D",
-      "quantity": 11,
-      "brand": "Bed Frames",
-      "tags": ["Rustic", "Pine", "Cozy"],
-      "status": "New"
+    "quantity": 16,
+    "type": "End Table",
+    "tags": ["Mahogany", "Elegant Design", "Premium"],
+    "status": "New"
+  },
+  {
+    "title": "Luxury Living Dining Chairs (Set of 6)",
+    "subtitle": "Luxurious seating for your dining area",
+    "brand": "Luxury Living",
+    "price": {
+      "old": 299,
+      "new": 249
     },
-    {
-      "title": "Solid Mahogany End Table",
-      "subtitle": "Classic Living Room Accent",
-      "price": {
-        "old": 89.99,
-        "new": 79.99
-      },
-      "ratings": 4,
-      "description": {
-        "text": "A classic end table made from solid mahogany wood.",
-        "images": ["image27.jpg", "image28.jpg"]
-      },
-      "size": "L",
-      "color": "#800000",
-      "quantity": 17,
-      "brand": "End Tables",
-      "tags": ["Solid Mahogany", "Classic", "Living Room"],
-      "status": "New"
-    }
-  ]
-  
+    "ratings": 4,
+    "description": {
+      "text": "Our set of 6 mahogany dining chairs by Luxury Living offers luxurious seating for your dining area. Designed for both style and comfort.",
+      "images": ["https://example.com/luxury-living-dining-chairs.jpg"],
+      "photo": "https://example.com/luxury-living-dining-chairs.jpg"
+    },
+    "quantity": 14,
+    "type": "Dining Chairs",
+    "tags": ["Mahogany", "Elegant Design", "Comfortable"],
+    "status": "New"
+  },
+  {
+    "title": "Home Essentials Dining Table",
+    "subtitle": "Elegant dining for your home",
+    "brand": "Home Essentials",
+    "price": {
+      "old": 599,
+      "new": 499
+    },
+    "ratings": 4,
+    "description": {
+      "text": "Dine in elegance with our Home Essentials dining table. Crafted from cherry wood, it adds a touch of sophistication to your home.",
+      "images": ["https://example.com/home-essentials-dining-table.jpg"],
+      "photo": "https://example.com/home-essentials-dining-table.jpg"
+    },
+    "quantity": 12,
+    "type": "Dining Table",
+    "tags": ["Cherry Wood", "Elegant Design", "Sophisticated"],
+    "status": "New"
+  },
+  {
+    "title": "Home Essentials End Table",
+    "subtitle": "Versatile elegance for your living room",
+    "brand": "Home Essentials",
+    "price": {
+      "old": 129,
+      "new": 99
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The cherry wood end table by Home Essentials is a versatile and elegant addition to your living room. It offers both style and functionality, making it a practical choice.",
+      "images": ["https://example.com/home-essentials-end-table.jpg"],
+      "photo": "https://example.com/home-essentials-end-table.jpg"
+    },
+    "quantity": 18,
+    "type": "End Table",
+    "tags": ["Cherry Wood", "Elegant Design", "Versatile"],
+    "status": "New"
+  },
+  {
+    "title": "Home Essentials Bookshelf",
+    "subtitle": "Showcase your collection with style",
+    "brand": "Home Essentials",
+    "price": {
+      "old": 399,
+      "new": 349
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The cherry wood bookshelf by Home Essentials is designed to showcase your collection with style. Its cherry wood finish and spacious design make it a perfect home for your books and decor.",
+      "images": ["https://example.com/home-essentials-bookshelf.jpg"],
+      "photo": "https://example.com/home-essentials-bookshelf.jpg"
+    },
+    "quantity": 14,
+    "type": "Bookshelf",
+    "tags": ["Cherry Wood", "Classic Design", "Spacious"],
+    "status": "New"
+  },
+  {
+    "title": "Home Essentials Bed Frame",
+    "subtitle": "Stylish comfort for your bedroom",
+    "brand": "Home Essentials",
+    "price": {
+      "old": 599,
+      "new": 499
+    },
+    "ratings": 4,
+    "description": {
+      "text": "Our cherry wood bed frame by Home Essentials offers both style and comfort. It's the perfect addition to your bedroom, providing a cozy and elegant sleeping experience.",
+      "images": ["https://example.com/home-essentials-bed-frame.jpg"],
+      "photo": "https://example.com/home-essentials-bed-frame.jpg"
+    },
+    "quantity": 25,
+    "type": "Bed Frame",
+    "tags": ["Cherry Wood", "Classic Design", "Comfortable"],
+    "status": "New"
+  },
+  {
+    "title": "Teakwood Writing Desk",
+    "subtitle": "A desk for productivity and aesthetics",
+    "brand": "FurniCraft",
+    "price": {
+      "old": 399,
+      "new": 349
+    },
+    "ratings": 4,
+    "description": {
+      "text": "This teakwood writing desk combines form and function. It's perfect for work or study, offering a spacious surface while enhancing your workspace's visual appeal.",
+      "images": ["https://example.com/furnicraft-writing-desk.jpg"],
+      "photo": "https://example.com/furnicraft-writing-desk.jpg"
+    },
+    "quantity": 20,
+    "type": "Writing Desk",
+    "tags": ["Teakwood", "Productive", "Sleek Design"],
+    "status": "New"
+  },
+  {
+    "title": "FurniCraft Dining Table",
+    "subtitle": "Sleek and modern for your dining room",
+    "brand": "FurniCraft",
+    "price": {
+      "old": 349,
+      "new": 299
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The FurniCraft dining table adds a sleek and modern touch to your dining room. Its teakwood construction ensures durability and style.",
+      "images": ["https://example.com/furnicraft-dining-table.jpg"],
+      "photo": "https://example.com/furnicraft-dining-table.jpg"
+    },
+    "quantity": 22,
+    "type": "Dining Table",
+    "tags": ["Teakwood", "Sleek Design", "Modern"],
+    "status": "New"
+  },
+  {
+    "title": "FurniCraft Coffee Table",
+    "subtitle": "A statement piece for your living room",
+    "brand": "FurniCraft",
+    "price": {
+      "old": 249,
+      "new": 199
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The teakwood coffee table by FurniCraft is a statement piece for your living room. Its sleek design and teakwood finish make it a perfect accent.",
+      "images": ["https://example.com/furnicraft-coffee-table.jpg"],
+      "photo": "https://example.com/furnicraft-coffee-table.jpg"
+    },
+    "quantity": 25,
+    "type": "Coffee Table",
+    "tags": ["Teakwood", "Sleek Design", "Stylish"],
+    "status": "New"
+  },
+  {
+    "title": "FurniCraft End Table",
+    "subtitle": "Versatile addition to your living room",
+    "brand": "FurniCraft",
+    "price": {
+      "old": 149,
+      "new": 119
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The teakwood end table by FurniCraft is a versatile addition to your living room. Its sleek design complements any decor style and provides a convenient surface for drinks or decor.",
+      "images": ["https://example.com/furnicraft-end-table.jpg"],
+      "photo": "https://example.com/furnicraft-end-table.jpg"
+    },
+    "quantity": 20,
+    "type": "End Table",
+    "tags": ["Teakwood", "Sleek Design", "Versatile"],
+    "status": "New"
+  },
+  {
+    "title": "FurniCraft Bed Frame",
+    "subtitle": "Elegance and comfort for your bedroom",
+    "brand": "FurniCraft",
+    "price": {
+      "old": 799,
+      "new": 699
+    },
+    "ratings": 4,
+    "description": {
+      "text": "Our teakwood bed frame by FurniCraft offers elegance and comfort for your bedroom. Crafted with an eye for design, it ensures a stylish and cozy sleeping experience.",
+      "images": ["https://example.com/furnicraft-bed-frame.jpg"],
+      "photo": "https://example.com/furnicraft-bed-frame.jpg"
+    },
+    "quantity": 20,
+    "type": "Bed Frame",
+    "tags": ["Teakwood", "Elegant Design", "Comfortable"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Dining Table",
+    "subtitle": "Rustic charm for your dining area",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 599,
+      "new": 499
+    },
+    "ratings": 5,
+    "description": {
+      "text": "Our pine dining table by Rustic Comfort adds rustic charm to your dining area. Crafted from solid pine wood, it's perfect for family meals and gatherings.",
+      "images": ["https://example.com/rustic-comfort-dining-table.jpg"],
+      "photo": "https://example.com/rustic-comfort-dining-table.jpg"
+    },
+    "quantity": 12,
+    "type": "Dining Table",
+    "tags": ["Pine Wood", "Rustic Design", "Family-friendly"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Coffee Table",
+    "subtitle": "Rustic elegance for your living room",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 249,
+      "new": 199
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The pine coffee table by Rustic Comfort adds rustic elegance to your living room. Its design and pine wood finish make it a perfect centerpiece.",
+      "images": ["https://example.com/rustic-comfort-coffee-table.jpg"],
+      "photo": "https://example.com/rustic-comfort-coffee-table.jpg"
+    },
+    "quantity": 15,
+    "type": "Coffee Table",
+    "tags": ["Pine Wood", "Rustic Design", "Elegant"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort End Table",
+    "subtitle": "Versatile accent for your living room",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 129,
+      "new": 99
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The pine end table by Rustic Comfort is a versatile accent for your living room. Its design complements any decor style and provides a convenient surface for drinks or decor.",
+      "images": ["https://example.com/rustic-comfort-end-table.jpg"],
+      "photo": "https://example.com/rustic-comfort-end-table.jpg"
+    },
+    "quantity": 20,
+    "type": "End Table",
+    "tags": ["Pine Wood", "Rustic Design", "Versatile"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Dining Chairs (Set of 6)",
+    "subtitle": "Comfortable seating for family dinners",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 199,
+      "new": 159
+    },
+    "ratings": 4,
+    "description": {
+      "text": "Our pine dining chairs by Rustic Comfort provide comfortable seating for family dinners. This set of 6 chairs is designed for both style and comfort.",
+      "images": ["https://example.com/rustic-comfort-dining-chairs.jpg"],
+      "photo": "https://example.com/rustic-comfort-dining-chairs.jpg"
+    },
+    "quantity": 18,
+    "type": "Dining Chairs",
+    "tags": ["Pine Wood", "Rustic Design", "Comfortable"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Bookshelf",
+    "subtitle": "Organize your books with rustic charm",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 299,
+      "new": 249
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The pine bookshelf by Rustic Comfort is designed to add rustic charm to your home library. It offers ample space for your book collection and exudes a cozy vibe.",
+      "images": ["https://example.com/rustic-comfort-bookshelf.jpg"],
+      "photo": "https://example.com/rustic-comfort-bookshelf.jpg"
+    },
+    "quantity": 22,
+    "type": "Bookshelf",
+    "tags": ["Pine Wood", "Rustic Design", "Cozy"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Wardrobe",
+    "subtitle": "Rustic storage with style",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 599,
+      "new": 499
+    },
+    "ratings": 4,
+    "description": {
+      "text": "Our pine wardrobe by Rustic Comfort combines rustic storage with style. It's a perfect fit for your bedroom, providing ample space for your clothing while exuding a cozy charm.",
+      "images": ["https://example.com/rustic-comfort-wardrobe.jpg"],
+      "photo": "https://example.com/rustic-comfort-wardrobe.jpg"
+    },
+    "quantity": 15,
+    "type": "Wardrobe",
+    "tags": ["Pine Wood", "Rustic Design", "Stylish"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Writing Desk",
+    "subtitle": "A stylish workspace for productivity",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 349,
+      "new": 299
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The pine writing desk by Rustic Comfort is a stylish workspace for productivity. It's perfect for work or study, offering a spacious surface while enhancing your workspace's rustic charm.",
+      "images": ["https://example.com/rustic-comfort-writing-desk.jpg"],
+      "photo": "https://example.com/rustic-comfort-writing-desk.jpg"
+    },
+    "quantity": 20,
+    "type": "Writing Desk",
+    "tags": ["Pine Wood", "Rustic Design", "Productive"],
+    "status": "New"
+  },
+  {
+    "title": "Rustic Comfort Coffee Table",
+    "subtitle": "Rustic elegance for your living room",
+    "brand": "Rustic Comfort",
+    "price": {
+      "old": 199,
+      "new": 179
+    },
+    "ratings": 4,
+    "description": {
+      "text": "The pine coffee table by Rustic Comfort adds rustic elegance to your living room. Its design and pine wood finish make it a perfect centerpiece for your space.",
+      "images": ["https://example.com/rustic-comfort-coffee-table.jpg"],
+      "photo": "https://example.com/rustic-comfort-coffee-table.jpg"
+    },
+    "quantity": 16,
+    "type": "Coffee Table",
+    "tags": ["Pine Wood", "Rustic Design", "Elegant"],
+    "status": "New"
+  }
+]
