@@ -97,7 +97,7 @@ const SignIn = () => {
         </div>
       </div>
       <Helmet>
-        <title>Mahogany | Sign In</title>
+        <title>{'Mahogany | Sign In'}</title>
       </Helmet>
     </div>
   );

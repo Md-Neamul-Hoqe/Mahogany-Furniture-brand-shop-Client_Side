@@ -10,8 +10,12 @@
     "ratings": 5,
     "description": {
       "text": "Experience elegance with our Luxury Living dining table. Crafted from mahogany, it adds a touch of sophistication to your dining room.",
-      "images": ["https://example.com/luxury-living-dining-table.jpg"],
-      "photo": "https://example.com/luxury-living-dining-table.jpg"
+      "images": [
+        "https://i.ibb.co/swDyh18/Asgaard-sofa-5.png",
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/n85Lc3k/bedroom.png"
     },
     "quantity": 12,
     "type": "Dining Table",
@@ -29,8 +33,12 @@
     "ratings": 4,
     "description": {
       "text": "Sleep like royalty with our Luxury Living bed frame. Its rich mahogany wood and plush design ensure a night of luxurious sleep.",
-      "images": ["https://example.com/luxury-living-bed-frame.jpg"],
-      "photo": "https://example.com/luxury-living-bed-frame.jpg"
+      "images": [
+        "https://i.ibb.co/w65c5p0/respira.png",
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/5njFk5K/inner-Peach.png"
     },
     "quantity": 18,
     "type": "Bed Frame",
@@ -48,8 +56,12 @@
     "ratings": 4,
     "description": {
       "text": "Our mahogany sideboard by Luxury Living adds elegance to your dining room. It provides ample storage and complements your dining area's decor.",
-      "images": ["https://example.com/luxury-living-sideboard.jpg"],
-      "photo": "https://example.com/luxury-living-sideboard.jpg"
+      "images": [
+        "https://i.ibb.co/hYP1BDP/single-Product.png",
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/302kdBB/inner-Peach-1.png"
     },
     "quantity": 15,
     "type": "Sideboard",
@@ -67,8 +79,11 @@
     "ratings": 4,
     "description": {
       "text": "The Luxury Living writing desk combines style and productivity. It's perfect for work or study, offering a spacious surface while enhancing your workspace's visual appeal.",
-      "images": ["https://example.com/luxury-living-writing-desk.jpg"],
-      "photo": "https://example.com/luxury-living-writing-desk.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/4ZWC5HG/leviosa.png"
     },
     "quantity": 22,
     "type": "Writing Desk",
@@ -86,8 +101,11 @@
     "ratings": 4,
     "description": {
       "text": "Our mahogany wardrobe by Luxury Living is designed to add luxury to your bedroom. It offers spacious storage while exuding an elegant charm.",
-      "images": ["https://example.com/luxury-living-wardrobe.jpg"],
-      "photo": "https://example.com/luxury-living-wardrobe.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/6DWXpWX/muggo.png"
     },
     "quantity": 10,
     "type": "Wardrobe",
@@ -105,8 +123,11 @@
     "ratings": 5,
     "description": {
       "text": "Our mahogany end table by Luxury Living is the epitome of luxury. Its intricate design and rich finish make it a perfect accent piece for your living room.",
-      "images": ["https://example.com/luxury-living-end-table.jpg"],
-      "photo": "https://example.com/luxury-living-end-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/my2JrY2/syltherine.png"
     },
     "quantity": 16,
     "type": "End Table",
@@ -124,8 +145,11 @@
     "ratings": 4,
     "description": {
       "text": "Our set of 6 mahogany dining chairs by Luxury Living offers luxurious seating for your dining area. Designed for both style and comfort.",
-      "images": ["https://example.com/luxury-living-dining-chairs.jpg"],
-      "photo": "https://example.com/luxury-living-dining-chairs.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/swDyh18/Asgaard-sofa-5.png"
     },
     "quantity": 14,
     "type": "Dining Chairs",
@@ -143,8 +167,11 @@
     "ratings": 4,
     "description": {
       "text": "Dine in elegance with our Home Essentials dining table. Crafted from cherry wood, it adds a touch of sophistication to your home.",
-      "images": ["https://example.com/home-essentials-dining-table.jpg"],
-      "photo": "https://example.com/home-essentials-dining-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 12,
     "type": "Dining Table",
@@ -162,8 +189,11 @@
     "ratings": 4,
     "description": {
       "text": "The cherry wood end table by Home Essentials is a versatile and elegant addition to your living room. It offers both style and functionality, making it a practical choice.",
-      "images": ["https://example.com/home-essentials-end-table.jpg"],
-      "photo": "https://example.com/home-essentials-end-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/n85Lc3k/bedroom.png"
     },
     "quantity": 18,
     "type": "End Table",
@@ -181,8 +211,11 @@
     "ratings": 4,
     "description": {
       "text": "The cherry wood bookshelf by Home Essentials is designed to showcase your collection with style. Its cherry wood finish and spacious design make it a perfect home for your books and decor.",
-      "images": ["https://example.com/home-essentials-bookshelf.jpg"],
-      "photo": "https://example.com/home-essentials-bookshelf.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 14,
     "type": "Bookshelf",
@@ -200,8 +233,11 @@
     "ratings": 4,
     "description": {
       "text": "Our cherry wood bed frame by Home Essentials offers both style and comfort. It's the perfect addition to your bedroom, providing a cozy and elegant sleeping experience.",
-      "images": ["https://example.com/home-essentials-bed-frame.jpg"],
-      "photo": "https://example.com/home-essentials-bed-frame.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/ZxRH3yj/lolioto.png"
     },
     "quantity": 25,
     "type": "Bed Frame",
@@ -219,8 +255,11 @@
     "ratings": 4,
     "description": {
       "text": "This teakwood writing desk combines form and function. It's perfect for work or study, offering a spacious surface while enhancing your workspace's visual appeal.",
-      "images": ["https://example.com/furnicraft-writing-desk.jpg"],
-      "photo": "https://example.com/furnicraft-writing-desk.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 20,
     "type": "Writing Desk",
@@ -238,8 +277,11 @@
     "ratings": 4,
     "description": {
       "text": "The FurniCraft dining table adds a sleek and modern touch to your dining room. Its teakwood construction ensures durability and style.",
-      "images": ["https://example.com/furnicraft-dining-table.jpg"],
-      "photo": "https://example.com/furnicraft-dining-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/my2JrY2/syltherine.png"
     },
     "quantity": 22,
     "type": "Dining Table",
@@ -257,8 +299,11 @@
     "ratings": 4,
     "description": {
       "text": "The teakwood coffee table by FurniCraft is a statement piece for your living room. Its sleek design and teakwood finish make it a perfect accent.",
-      "images": ["https://example.com/furnicraft-coffee-table.jpg"],
-      "photo": "https://example.com/furnicraft-coffee-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 25,
     "type": "Coffee Table",
@@ -276,8 +321,11 @@
     "ratings": 4,
     "description": {
       "text": "The teakwood end table by FurniCraft is a versatile addition to your living room. Its sleek design complements any decor style and provides a convenient surface for drinks or decor.",
-      "images": ["https://example.com/furnicraft-end-table.jpg"],
-      "photo": "https://example.com/furnicraft-end-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/n85Lc3k/bedroom.png"
     },
     "quantity": 20,
     "type": "End Table",
@@ -295,8 +343,11 @@
     "ratings": 4,
     "description": {
       "text": "Our teakwood bed frame by FurniCraft offers elegance and comfort for your bedroom. Crafted with an eye for design, it ensures a stylish and cozy sleeping experience.",
-      "images": ["https://example.com/furnicraft-bed-frame.jpg"],
-      "photo": "https://example.com/furnicraft-bed-frame.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 20,
     "type": "Bed Frame",
@@ -314,8 +365,11 @@
     "ratings": 5,
     "description": {
       "text": "Our pine dining table by Rustic Comfort adds rustic charm to your dining area. Crafted from solid pine wood, it's perfect for family meals and gatherings.",
-      "images": ["https://example.com/rustic-comfort-dining-table.jpg"],
-      "photo": "https://example.com/rustic-comfort-dining-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/ZxRH3yj/lolioto.png"
     },
     "quantity": 12,
     "type": "Dining Table",
@@ -333,8 +387,11 @@
     "ratings": 4,
     "description": {
       "text": "The pine coffee table by Rustic Comfort adds rustic elegance to your living room. Its design and pine wood finish make it a perfect centerpiece.",
-      "images": ["https://example.com/rustic-comfort-coffee-table.jpg"],
-      "photo": "https://example.com/rustic-comfort-coffee-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 15,
     "type": "Coffee Table",
@@ -352,8 +409,11 @@
     "ratings": 4,
     "description": {
       "text": "The pine end table by Rustic Comfort is a versatile accent for your living room. Its design complements any decor style and provides a convenient surface for drinks or decor.",
-      "images": ["https://example.com/rustic-comfort-end-table.jpg"],
-      "photo": "https://example.com/rustic-comfort-end-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/my2JrY2/syltherine.png"
     },
     "quantity": 20,
     "type": "End Table",
@@ -371,8 +431,11 @@
     "ratings": 4,
     "description": {
       "text": "Our pine dining chairs by Rustic Comfort provide comfortable seating for family dinners. This set of 6 chairs is designed for both style and comfort.",
-      "images": ["https://example.com/rustic-comfort-dining-chairs.jpg"],
-      "photo": "https://example.com/rustic-comfort-dining-chairs.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 18,
     "type": "Dining Chairs",
@@ -390,8 +453,11 @@
     "ratings": 4,
     "description": {
       "text": "The pine bookshelf by Rustic Comfort is designed to add rustic charm to your home library. It offers ample space for your book collection and exudes a cozy vibe.",
-      "images": ["https://example.com/rustic-comfort-bookshelf.jpg"],
-      "photo": "https://example.com/rustic-comfort-bookshelf.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/n85Lc3k/bedroom.png"
     },
     "quantity": 22,
     "type": "Bookshelf",
@@ -409,8 +475,11 @@
     "ratings": 4,
     "description": {
       "text": "Our pine wardrobe by Rustic Comfort combines rustic storage with style. It's a perfect fit for your bedroom, providing ample space for your clothing while exuding a cozy charm.",
-      "images": ["https://example.com/rustic-comfort-wardrobe.jpg"],
-      "photo": "https://example.com/rustic-comfort-wardrobe.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 15,
     "type": "Wardrobe",
@@ -428,8 +497,11 @@
     "ratings": 4,
     "description": {
       "text": "The pine writing desk by Rustic Comfort is a stylish workspace for productivity. It's perfect for work or study, offering a spacious surface while enhancing your workspace's rustic charm.",
-      "images": ["https://example.com/rustic-comfort-writing-desk.jpg"],
-      "photo": "https://example.com/rustic-comfort-writing-desk.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/swDyh18/Asgaard-sofa-5.png"
     },
     "quantity": 20,
     "type": "Writing Desk",
@@ -447,8 +519,11 @@
     "ratings": 4,
     "description": {
       "text": "The pine coffee table by Rustic Comfort adds rustic elegance to your living room. Its design and pine wood finish make it a perfect centerpiece for your space.",
-      "images": ["https://example.com/rustic-comfort-coffee-table.jpg"],
-      "photo": "https://example.com/rustic-comfort-coffee-table.jpg"
+      "images": [
+        "https://i.ibb.co/VM8NSmb/desciption.png",
+        "https://i.ibb.co/myZ8m4T/desciption-1.png"
+      ],
+      "photo": "https://i.ibb.co/w65c5p0/respira.png"
     },
     "quantity": 16,
     "type": "Coffee Table",

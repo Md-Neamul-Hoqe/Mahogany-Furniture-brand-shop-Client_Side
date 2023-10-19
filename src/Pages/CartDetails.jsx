@@ -34,7 +34,7 @@ const CartDetails = () => {
         <button className="btn">Check Out</button>
       </div>
       <Helmet>
-        <title>Mahogany | Shopping Cart</title>
+        <title>{'Mahogany | Shopping Cart'}</title>
       </Helmet>
     </div>
   );

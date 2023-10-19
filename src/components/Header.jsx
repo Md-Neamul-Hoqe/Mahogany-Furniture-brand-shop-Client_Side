@@ -3,7 +3,7 @@ const Header = () => {
     <div
       className="hero min-h-screen absolute top-0 px-14"
       style={{
-        backgroundImage: 'url("./src/assets/images/banner-image.jpg")',
+        backgroundImage: 'url("https://i.ibb.co/ryyFs32/banner-image.jpg")',
         backgroundOrigin: "center",
         backgroundSize: "100vw",
       }}>

@@ -25,8 +25,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-        // loader: () =>
-        //   fetch("https://coffee-store-server-seven-gamma.vercel.app/coffee"),
+        loader: () => fetch(`http://127.0.0.1:5000/products`),
       },
       {
         path: "/addProduct",
@@ -35,24 +34,19 @@ const router = createBrowserRouter([
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        // loader: ({ params }) =>
-        //   fetch(
-        //     `https://coffee-store-server-seven-gamma.vercel.app/coffee/${params.id}`
-        //   ),
+        loader: ({ params }) =>
+          fetch(`http://127.0.0.1:5000/products/${params.id}`),
       },
       {
-        path: "/productDetails",
-        // path: "/productDetails/:id",
+        path: "/productDetails/:id",
         element: <ProductDetails />,
-        // loader: ({ params }) =>
-        //   fetch(
-        //     `https://coffee-store-server-seven-gamma.vercel.app/coffee/${params.id}`
-        //   ),
+        loader: ({ params }) =>
+          fetch(`http://127.0.0.1:5000/products/${params.id}`),
       },
       {
         path: "/shop",
         element: <Shop />,
-        loader: () => fetch(`./demo.json`),
+        loader: () => fetch(`http://127.0.0.1:5000/products`),
       },
       {
         path: "/cart",

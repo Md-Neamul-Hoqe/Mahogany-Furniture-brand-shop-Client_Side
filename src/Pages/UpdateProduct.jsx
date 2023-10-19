@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
-const UpdateProduct = () => {
+const UpdateProduct = ({ product }) => {
   const handleUpdateProduct = (e) => {
     e.preventDefault();
 
@@ -57,7 +58,7 @@ const UpdateProduct = () => {
         <div className="card w-full max-w-4xl bg-transparent">
           <form onSubmit={handleUpdateProduct} className="card-body bg-gray">
             <div className="text-center">
-              <h3>Update The Product: </h3>
+              <h3>Update The Product: {product.title} </h3>
             </div>
             <div className="flex flex-col gap-6">
               <div className="flex max-lg:flex-col gap-6">
@@ -71,6 +72,7 @@ const UpdateProduct = () => {
                     name="title"
                     className="input input-bordered"
                     required
+                    defaultValue={product.title}
                   />
                 </div>
                 <div className="form-control flex-1">
@@ -82,6 +84,7 @@ const UpdateProduct = () => {
                     placeholder="Enter Product Sub Title"
                     name="subtitle"
                     className="input input-bordered"
+                    defaultValue={product.subtitle}
                     required
                   />
                 </div>
@@ -97,6 +100,7 @@ const UpdateProduct = () => {
                     name="brand"
                     className="input input-bordered"
                     required
+                    defaultValue={product.brand}
                   />
                 </div>
 
@@ -110,6 +114,7 @@ const UpdateProduct = () => {
                     name="type"
                     className="input input-bordered"
                     required
+                    defaultValue={product.type}
                   />
                 </div>
               </div>
@@ -124,6 +129,7 @@ const UpdateProduct = () => {
                     name="tags"
                     className="input input-bordered"
                     required
+                    defaultValue={product.tags}
                   />
                 </div>
 
@@ -137,6 +143,7 @@ const UpdateProduct = () => {
                     name="details"
                     className="textarea textarea-bordered"
                     required
+                    defaultValue={product?.description?.text}
                   />
                 </div>
               </div>
@@ -149,6 +156,7 @@ const UpdateProduct = () => {
                   placeholder="Enter Photo URL"
                   name="photo"
                   className="input input-bordered"
+                  defaultValue={product?.description?.photo}
                   required
                 />
               </div>
@@ -164,10 +172,14 @@ const UpdateProduct = () => {
         </div>
       </div>
       <Helmet>
-        <title>Mahogany | Update {name | Product._id}</title>
+        <title>{`Mahogany | Update ${product.title}`}</title>
       </Helmet>
     </div>
   );
+};
+
+UpdateProduct.propTypes = {
+  product: PropTypes.object,
 };
 
 export default UpdateProduct;

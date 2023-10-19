@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../public/logo.svg";
+import logo from "/logo.svg";
 import {
   TbUserExclamation,
   TbShoppingCart,

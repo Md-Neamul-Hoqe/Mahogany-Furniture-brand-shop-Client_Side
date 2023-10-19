@@ -164,7 +164,7 @@ const AddProduct = () => {
         </div>
       </div>
       <Helmet>
-        <title>Mahogany | Add Product</title>
+        <title>{'Mahogany | Add Product'}</title>
       </Helmet>
     </div>
   );

@@ -10,7 +10,7 @@ const Shop = () => {
         <div
           className="hero min-h-fit top-16 px-14"
           style={{
-            backgroundImage: 'url("./src/assets/images/banner-shop.png")',
+            backgroundImage: 'url("https://i.ibb.co/Q9hThXf/banner-shop.png")',
             backgroundOrigin: "center",
             backgroundSize: "100vw",
           }}>
@@ -34,12 +34,12 @@ const Shop = () => {
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 max-w-5xl mx-auto">
-        {products.map((product, idx) => (
-          <Product key={idx} product={product} />
-        ))}
+        {products.length && products.map((product, idx) => (
+              <Product key={idx} product={product} />
+            ))}
       </section>
       <Helmet>
-        <title>Mahogany | Shop</title>
+        <title>{'Mahogany | Shop'}</title>
       </Helmet>
     </section>
   );

@@ -103,7 +103,7 @@ const SignUp = () => {
         </div>
       </div>
       <Helmet>
-        <title>Mahogany | Sign Up</title>
+        <title>{'Mahogany | Sign Up'}</title>
       </Helmet>
     </div>
   );

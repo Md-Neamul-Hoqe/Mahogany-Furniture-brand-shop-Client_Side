@@ -4,9 +4,10 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import { MdFavoriteBorder, MdShare } from "react-icons/md";
 import { TbArrowsLeftRight } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 
 const Product = ({ product }) => {
-  console.log(product);
+  console.log(product._id);
   const { theme } = useContext(AuthContext);
   return (
     <div className="hero min-h-min">
@@ -29,26 +30,26 @@ const Product = ({ product }) => {
           </Link>
         </div>
         <div>
-        <Link
-          to={`/productDetails`}
-          product={product}
-          className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
-          Details
-        </Link>
-        <Link
-          to={`/updateProduct`}
-          product={product}
-          className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
-          Update
-        </Link>
+          <Link
+            to={`/productDetails/${product._id}`}
+            product={product}
+            className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+            Details
+          </Link>
+          <Link
+            to={`/updateProduct/${product._id}`}
+            product={product}
+            className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+            Update
+          </Link>
         </div>
       </div>
 
       <div className="card card-compact p-0 min-w-min bg-gray-100 rounded-none">
         <figure>
           <img
-            src="./src/assets/images/Dining-1.png"
-            alt="Dining"
+            src={product?.description?.photo}
+            alt={product?.subtitle}
             className="rounded-none"
           />
         </figure>
@@ -56,15 +57,18 @@ const Product = ({ product }) => {
           <h5 className={`${theme ? "text-white" : "text-dark"}`}>
             {product.title}
           </h5>
-          <small className="text-sub-title">{product.subtitle}</small>
+          <small className="text-sub-title">{product?.subtitle}</small>
           <p className="flex justify-between items-end gap-2">
-            <span className="text-xl">Tk {product.price.new}</span>
+            <span className="text-xl">Tk {product?.price?.new}</span>
             <span className="text-body line-through">
-              Tk {product.price.old}
+              Tk {product?.price?.old}
             </span>
           </p>
         </div>
       </div>
+      <Helmet>
+        <title>{`Mahogany | ${product.title}`}</title>
+      </Helmet>
     </div>
   );
 };

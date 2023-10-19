@@ -1,17 +1,43 @@
-import { useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
-  const [product, setProduct] = useState({});
-  useEffect(() => {
-    fetch("./demo.json")
-      .then((res) => res.json())
-      .then((data) => setProduct(data[0]));
-  }, []);
+  const product = useLoaderData();
 
-  const { title, price, ratings, description, size, quantity, tags, brand } =
-    product;
+  const {
+    _id,
+    title,
+    subtitle,
+    price,
+    ratings,
+    description,
+    type,
+    quantity,
+    tags,
+    brand,
+  } = product;
+
+  //
+  //
+  // https://i.ibb.co/VTBqTTx/blog.png
+
+  // https://i.ibb.co/BKksZkq/Dining-1.png
+  // https://i.ibb.co/z5KD6Z1/furniture.png
+  // https://i.ibb.co/L0VhH8G/furniture-1.png
+  // https://i.ibb.co/2jRVqjx/Image-living-room.png
+  //
+  //
+  //
+  // https://i.ibb.co/n85Lc3k/bedroom.png
+  // https://i.ibb.co/ZxRH3yj/lolioto.png
+  // https://i.ibb.co/my2JrY2/syltherine.png
+  // https://i.ibb.co/XSbgmTK/Outdoor-sofa-set-1.png
+  // https://i.ibb.co/vqCn804/Outdoor-sofa-set-2.png
+  // https://i.ibb.co/JF9hSd7/recent-Post.png
+  // https://i.ibb.co/gWw47V4/recent-Post-1.png
+  //
+  //
 
   return (
     <div className="relative">
@@ -32,13 +58,12 @@ const ProductDetails = () => {
       <section className="flex items-start gap-10">
         <div className="flex flex-1 gap-5">
           <div className="flex flex-col gap-5">
-            <img src="./src/assets/images/Outdoor sofa set 2.png" alt="" />
-            <img src="./src/assets/images/Outdoor sofa set 1.png" alt="" />
-            <img src="./src/assets/images/Outdoor sofa set 2.png" alt="" />
-            <img src="./src/assets/images/Outdoor sofa set 1.png" alt="" />
+            {description?.images.map((image, idx) => {
+              <img key={idx} src={image} alt={title} />;
+            })}
           </div>
           <div>
-            <img src="./src/assets/images/desciption-1.png" alt="" />
+            <img src={description?.photo} alt={title} />
           </div>
         </div>
         <div className="flex flex-1 flex-col items-start justify-start gap-5">
@@ -83,20 +108,17 @@ const ProductDetails = () => {
             <p>Size</p>
             <div>
               <button
-                className={`btn ${
-                  size === "L" ? "bg-primary text-white" : "bg-primary-light"
+                className={`btn bg-primary-light"
                 }`}>
                 L
               </button>
               <button
-                className={`btn ${
-                  size === "XL" ? "bg-primary text-white" : "bg-primary-light"
+                className={`btn bg-primary"
                 }`}>
                 XL
               </button>
               <button
-                className={`btn ${
-                  size === "XS" ? "bg-primary text-white" : "bg-primary-light"
+                className={`btn bg-primary-light"
                 }`}>
                 XS
               </button>
@@ -126,32 +148,39 @@ const ProductDetails = () => {
           <hr className="w-full my-5" />
 
           <table>
-            <tr>
-              <td>SKU</td>
-              <td>:</td>
-              <td>SS0001</td>
-            </tr>
-            <tr>
-              <td>Brand</td>
-              <td>:</td>
-              <td>{brand}</td>
-            </tr>
-            {tags?.length && (
+            <tbody>
               <tr>
-                <td>Tags</td>
+                <td>SKU</td>
                 <td>:</td>
-                <td>
-                  {tags?.map((element, idx) => {
-                    <li key={idx}>{element}</li>;
-                  })}
-                </td>
+                <td>SS0001</td>
               </tr>
-            )}
+              <tr>
+                <td>Brand</td>
+                <td>:</td>
+                <td>{brand}</td>
+              </tr>
+              {tags?.length && (
+                <tr>
+                  <td>Tags</td>
+                  <td>:</td>
+                  <td>
+                    {tags?.map((element, idx) => {
+                      <li key={idx}>{element}</li>;
+                    })}
+                  </td>
+                </tr>
+              )}
+            </tbody>
           </table>
         </div>
       </section>
       <section className="border-t-2 w-full flex flex-col items-center gap-5 pt-10 mt-10">
         <h2 className="text-title">Description</h2>
+        <div className="flex flex-wrap justify-between">
+          {description?.images.map((image, idx) => (
+            <img key={idx} src={image} alt={subtitle} />
+          ))}
+        </div>
         <p className="text-body mb-5">
           {description?.text} Setting the bar as one of the loudest speakers in
           its class, the Kilburn is a compact, stout-hearted hero with a
@@ -160,7 +189,7 @@ const ProductDetails = () => {
         </p>
       </section>
       <Helmet>
-        <title>Mahogany | Details - {title}</title>
+        <title>{`Mahogany | Details - ${title}`}</title>
       </Helmet>
     </div>
   );

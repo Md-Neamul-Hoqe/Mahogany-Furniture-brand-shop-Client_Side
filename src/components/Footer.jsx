@@ -1,9 +1,10 @@
+import logo from "/logo.svg";
 const Footer = () => {
   return (
     <section className="border-t-2">
       <footer className="max-w-5xl mx-auto footer p-10">
         <aside>
-          <img src="./src/assets/images/logo.svg" alt="" />
+          <img src={logo} alt="logo" />
           <p>
             Mahogany Industries Ltd.
             <br />

@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 
-const Products = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("./demo.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+const Products = ({ products }) => {
+  // const products = useLoaderData();
+  // const [products, setProducts] = useState(loadedData);
 
   return (
     <section>
@@ -29,4 +25,7 @@ const Products = () => {
   );
 };
 
+Products.propTypes = {
+  products: PropTypes.array,
+};
 export default Products;
