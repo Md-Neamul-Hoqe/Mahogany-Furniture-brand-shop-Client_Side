@@ -1,13 +1,10 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Providers/AuthProviders";
-import { useLoaderData } from "react-router-dom";
 
 const CartDetails = () => {
-  const { cart, setCart, handleRemoveFromCart } = useContext(AuthContext);
-  const cartDB = useLoaderData();
-  if (typeof cartDB === "object" && cartDB.length) setCart(...cartDB);
-
+  const { cart, handleRemoveFromCart } = useContext(AuthContext);
+  console.log(cart);
   const total = cart?.map((product) => product?.price?.new * product?.quantity);
   return (
     <>
@@ -71,9 +68,13 @@ const CartDetails = () => {
                 </tr>
               ))
             ) : (
-              <div className="border min-h-[calc(100vh/3)] w-full flex justify-center items-center">
-                <h3>Your Cart Is Empty.</h3>
-              </div>
+              <tr>
+                <td
+                  colSpan={4}
+                  className="border min-h-[calc(100vh/3)] w-full flex justify-center items-center">
+                  <h3>Your Cart Is Empty.</h3>
+                </td>
+              </tr>
             )}
           </tbody>
         </table>

@@ -63,8 +63,6 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <CartDetails />,
-        loader: () =>
-          fetch(`https://mahogany-furniture-server.vercel.app/cart`),
       },
       {
         path: "/shop",

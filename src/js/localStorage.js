@@ -1,4 +1,4 @@
-const  className="py-5" = () => {
+const getStoredCart = () => {
   const storedCartIdString = localStorage.getItem("cart");
   // console.log(storedCartIdString);
   if (storedCartIdString) {
