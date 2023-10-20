@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
-  const { theme } = useContext(AuthContext);
+  const { theme, setDeletedId } = useContext(AuthContext);
 
   const handleDeleteProduct = (id) => {
     console.log(id);
@@ -23,7 +23,7 @@ const Product = ({ product }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products/${id}`,
+          `https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${id}`,
           {
             method: "DELETE",
           }
@@ -31,6 +31,7 @@ const Product = ({ product }) => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
+              setDeletedId(product._id);
               Swal.fire("Deleted!", "The product has been deleted.", "success");
             }
           });

@@ -17,6 +17,7 @@ const AuthProviders = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [theme, setTheme] = useState(false);
+  const [deletedId, setDeletedId] = useState("");
 
   // const [favorite, setFavorite] = useState(false);
   const dataTheme = document.getElementsByTagName("html");
@@ -104,6 +105,8 @@ const AuthProviders = ({ children }) => {
     setError,
     theme,
     logOut,
+    deletedId,
+    setDeletedId,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

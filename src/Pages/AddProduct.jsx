@@ -25,7 +25,7 @@ const AddProduct = () => {
       photo,
     };
 
-    fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products", {
+    fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

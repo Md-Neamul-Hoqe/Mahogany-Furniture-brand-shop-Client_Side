@@ -45,17 +45,22 @@ const SignUp = () => {
 
         console.log(user);
 
-        Swal.fire({
-          title: "User created successfully. (firebase)",
-          showClass: {
-            popup: "animate__animated animate__fadeInDown",
-          },
-          hideClass: {
-            popup: "animate__animated animate__fadeOutUp",
-          },
-        });
+        setTimeout(() => {
+          Swal.fire({
+            title: "User created successfully.",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+        }, 2000);
 
-        fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/users", {
+        /* navigate after Registration */
+        location?.state ? navigate(location?.state) : navigate("/");
+
+        fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -67,9 +72,6 @@ const SignUp = () => {
             console.log(data);
             if (data?.insertedId) {
               console.log("User info stored in database successfully.");
-
-              /* navigate after Registration */
-              return location?.state && navigate(location?.state);
             } else {
               console.log("Database connection lost.");
             }

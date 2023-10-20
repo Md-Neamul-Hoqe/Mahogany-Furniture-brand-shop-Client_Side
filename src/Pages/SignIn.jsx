@@ -40,7 +40,7 @@ const SignIn = () => {
         /* show popup after redirect to another page */
         setTimeout(() => {
           Swal.fire({
-            title: "User signed in successfully.(Firebase)",
+            title: "User signed in successfully.",
             showClass: {
               popup: "animate__animated animate__fadeInDown",
             },
@@ -54,7 +54,7 @@ const SignIn = () => {
         location?.state ? navigate(location?.state) : navigate("/");
 
         /* Update user information */
-        fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/users", {
+        fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

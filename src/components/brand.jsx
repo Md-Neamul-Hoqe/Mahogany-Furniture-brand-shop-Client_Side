@@ -5,7 +5,7 @@ import { useState } from "react";
 const Brand = () => {
   const [brands, setBrands] = useState([]);
 
-  fetch("https://mahogany-furniture-server-7ud2cl8nd.vercel.app/brands")
+  fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/brands")
     .then((res) => res.json())
     .then((data) => setBrands(data));
 

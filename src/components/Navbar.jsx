@@ -76,9 +76,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user && Object.keys(user).length > 0 ? (
-          <div className="flex">
+          <div className="flex items-center">
             <div className="avatar mr-2">
-              <div className="w-12 rounded-full">
+              <div className="w-8 h-8 rounded-full">
                 <img
                   src={user?.photoURL || userDefaultImg}
                   alt={user && user?.displayName}
@@ -94,13 +94,13 @@ const Navbar = () => {
                 ? user.email.split("@")[0].slice(0, 5) + "..."
                 : user.email.split("@")[0]}
             </button>
-            <button  onClick={logOut}  className="btn">
+            <button onClick={logOut} className="btn">
               Log Out
             </button>
           </div>
         ) : (
           <Link to="/SignIn" className="btn bg-transparent border-0">
-            <TbUserExclamation />
+            <TbUserExclamation className="text-2xl" />
           </Link>
         )}
         {/* <Link className="btn bg-transparent border-0">
