@@ -1,19 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import Swal from "sweetalert2";
 export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [error, setError] = useState("");
   const [theme, setTheme] = useState(false);
+
   // const [favorite, setFavorite] = useState(false);
   const dataTheme = document.getElementsByTagName("html");
 
@@ -34,11 +38,58 @@ const AuthProviders = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const googleProvider = new GoogleAuthProvider(AuthContext);
+  const logOut = () => {
+    setLoading(true);
+    const loggingOut = signOut(auth).then((res) => {
+      if (!res)
+        Swal.fire({
+          title: "Log out successfully.(Firebase)",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+    });
+    return () => loggingOut();
+  };
+
   const signInGoogle = () => {
     setLoading(true);
-    return signInWithPopup(auth, googleProvider);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const googlePopup = signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        setUser(result.user);
+
+        Swal.fire({
+          title: "User created successfully.(Firebase)",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      })
+      .catch((error) => setError(error));
+
+    return () => googlePopup();
   };
+
+  useEffect(() => {
+    const userState = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+
+      setLoading(false);
+    });
+
+    return () => {
+      userState();
+    };
+  }, []);
 
   const userInfo = {
     user,
@@ -49,7 +100,10 @@ const AuthProviders = ({ children }) => {
     loading,
     setLoading,
     toggleTheme,
+    error,
+    setError,
     theme,
+    logOut,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

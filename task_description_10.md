@@ -1,8 +1,6 @@
 
 :triangular_flag_on_post: Update in requirements
   - Check requirements 5,6,11
-  - You can load brand names in home page from database / you can create fakedata & load from json. 
-
 ### 🧮 Website Theme:
 
 - **Category 5**: `Retail and E-commerce`
@@ -57,25 +55,7 @@
 
     This will be a private/protected route.
 
-12. You Must implement Email and password based Authentication. This means, you will have to implement the Registration and the login page. Users should be able to toggle between Login and Registration view .
-
 > :warning: `Note:` Do not enforce `forget or reset password feature` and the `email verification method`, as it will inconvenience the examiner. If you want, you can add email verification/forget the password after receiving the assignment result.
-
-On the Registration page, display errors when:
-
-     The password
-
-     - is less than 6 characters
-     - don't have a capital letter
-     - don't have a special character
-
-On the Login page, display errors when:
-
-    - password doesn't match
-    - email doesn't match
-    You can take the error message from firebase. You can show the error below the input fields or via alert/toast. If you use alert/toast, do not implement the browser alert.
-
-13. Also, implement at least `one extra login` which could be (facebook, github, google, etc).
 
 14. Once logged in, the user name, profile picture and the logout button should appear on the navbar. If the user clicks on the logout button, make sure to log him/her out.
 

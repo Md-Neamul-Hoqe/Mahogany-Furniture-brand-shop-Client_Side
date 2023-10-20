@@ -15,6 +15,7 @@ import Error404 from "./Pages/Error404.jsx";
 import Shop from "./Pages/Shop";
 import ProductDetails from "./Pages/ProductDetails";
 import { HelmetProvider } from "react-helmet-async";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addProduct",
-        element: <AddProduct />,
+        element: <PrivateRoutes><AddProduct /></PrivateRoutes>,
       },
       {
         path: "/updateProduct/:id",
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: <ProductDetails />,
+        element: <PrivateRoutes><ProductDetails /></PrivateRoutes>,
         loader: ({ params }) =>
           fetch(`https://mahogany-furniture-server-7ud2cl8nd.vercel.app/products/${params.id}`),
       },
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <CartDetails />,
+        element: <PrivateRoutes><CartDetails /></PrivateRoutes>,
         loader: () => fetch(`./demo.json`),
       },
       {

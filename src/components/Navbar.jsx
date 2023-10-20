@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "/logo.svg";
+import userDefaultImg from "../assets/user.png";
 import {
   TbUserExclamation,
   TbShoppingCart,
@@ -16,7 +17,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const Navbar = () => {
   // const { toggleTheme } = useTheme()
-  const { theme, toggleTheme } = useContext(AuthContext);
+  const { logOut, user, theme, toggleTheme } = useContext(AuthContext);
 
   const NavLinks = (
     <>
@@ -74,9 +75,34 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn bg-transparent border-0">
-          <TbUserExclamation />
-        </Link>
+        {user && Object.keys(user).length > 0 ? (
+          <div className="flex">
+            <div className="avatar mr-2">
+              <div className="w-12 rounded-full">
+                <img
+                  src={user?.photoURL || userDefaultImg}
+                  alt={user && user?.displayName}
+                />
+              </div>
+            </div>
+            <button className="font-bold mr-2 max-md:hidden">
+              {user?.displayName
+                ? user.displayName.length > 10
+                  ? user.displayName.slice(0, 6) + "..."
+                  : user.displayName
+                : user?.email?.split("@")[0] && user.email.split("@")[0] > 10
+                ? user.email.split("@")[0].slice(0, 5) + "..."
+                : user.email.split("@")[0]}
+            </button>
+            <button  onClick={logOut}  className="btn">
+              Log Out
+            </button>
+          </div>
+        ) : (
+          <Link to="/SignIn" className="btn bg-transparent border-0">
+            <TbUserExclamation />
+          </Link>
+        )}
         {/* <Link className="btn bg-transparent border-0">
           <TbSearch />
         </Link>
