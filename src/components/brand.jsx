@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Brand = () => {
   const [brands, setBrands] = useState([]);
 
-  fetch("https://mahogany-furniture-server.vercel.app/brands")
-    .then((res) => res.json())
-    .then((data) => setBrands(data));
+  useEffect(() => {
+    fetch("https://mahogany-furniture-server.vercel.app/brands")
+      .then((res) => res.json())
+      .then((data) => setBrands(data));
+  }, []);
 
   return (
     <section className="static min-h-screen mt-[calc(100vh)] w-full">

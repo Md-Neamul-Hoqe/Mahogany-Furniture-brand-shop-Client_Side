@@ -16,6 +16,7 @@ import Shop from "./Pages/Shop";
 import ProductDetails from "./Pages/ProductDetails";
 import { HelmetProvider } from "react-helmet-async";
 import PrivateRoutes from "./PrivateRoutes";
+// import Cart from "./components/Cart";
 
 const router = createBrowserRouter([
   {
@@ -27,9 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
         loader: () =>
-          fetch(
-            `https://mahogany-furniture-server.vercel.app/products`
-          ),
+          fetch(`https://mahogany-furniture-server.vercel.app/products`),
       },
       {
         path: "/addProduct",
@@ -62,12 +61,16 @@ const router = createBrowserRouter([
           ),
       },
       {
+        path: "/cart",
+        element: <CartDetails />,
+        loader: () =>
+          fetch(`https://mahogany-furniture-server.vercel.app/cart`),
+      },
+      {
         path: "/shop",
         element: <Shop />,
         loader: () =>
-          fetch(
-            `https://mahogany-furniture-server.vercel.app/products`
-          ),
+          fetch(`https://mahogany-furniture-server.vercel.app/products`),
       },
       {
         path: "/shop/:brand",
@@ -76,15 +79,6 @@ const router = createBrowserRouter([
           fetch(
             `https://mahogany-furniture-server.vercel.app/shop/${params.brand}`
           ),
-      },
-      {
-        path: "/cart",
-        element: (
-          <PrivateRoutes>
-            <CartDetails />
-          </PrivateRoutes>
-        ),
-        loader: () => fetch(`./demo.json`),
       },
       {
         path: "/SignUp",

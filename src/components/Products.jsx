@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import Product from "./Product";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
+import { getStoredCart } from "../js/localStorage";
 
 const Products = ({ products }) => {
-  const { deletedId } = useContext(AuthContext);
-  const [updatedProducts, setUpdatedProducts] = useState(products);
+  const { deletedId, setCart } = useContext(AuthContext);
+
+  const [updatedProducts, setUpdatedProducts] = useState(
+    typeof products === "object" ? products : null
+  );
 
   useEffect(() => {
     typeof products !== "string" &&
@@ -15,10 +19,40 @@ const Products = ({ products }) => {
       );
   }, [deletedId, products]);
 
+  useEffect(() => {
+    if (updatedProducts?.length) {
+      /* Load Cart from LS after updatedProducts load in site */
+
+      const storedCartId = getStoredCart();
+      const uniqueIds = new Set(...[storedCartId]);
+
+      const savedCart = [];
+      for (const id of uniqueIds) {
+        /* Get The Bottle id From Bottles */
+        const product = updatedProducts?.find((product) => product._id === id);
+
+        if (product) {
+          const Qty = storedCartId.filter(
+            (idInCart) => idInCart === id
+          )?.length;
+
+          product.quantity = Qty;
+
+          savedCart.push(product);
+
+          /* Save cart to state */
+          setCart(savedCart);
+
+          // console.log("savedCart", savedCart);
+        }
+      }
+    }
+  }, [updatedProducts, setCart]);
+
   return (
     <section>
       <h4>Our Products</h4>
-      {!updatedProducts.length || typeof updatedProducts === "string" ? (
+      {!updatedProducts?.length || typeof updatedProducts === "string" ? (
         <div className="min-h-screen flex justify-center items-center">
           <span className="loading loading-infinity w-40 text-primary"></span>
         </div>

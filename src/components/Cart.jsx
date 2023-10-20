@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { BsBagX } from "react-icons/bs";
 import { RiCloseCircleFill } from "react-icons/ri";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Cart = () => {
+  const { cart } = useContext(AuthContext);
+
+  console.log(cart);
+
   return (
     <div className="absolute -top-20 right-0 max-w-md w-[500px] flex flex-col bg-white px-5 border shadow-lg z-50 opacity-0">
       <div className="flex justify-between items-center">
@@ -12,23 +18,26 @@ const Cart = () => {
       </div>
       <table className="mt-10 w-full">
         <tbody>
-          <tr className="align-middle">
-            <td>
-              <img src="" alt="product icon" />
-            </td>
-            <td>
-              <h5>title</h5>
-              <br />
-              <h5>
-                <span>1</span> x <span className="text-primary">TK price</span>
-              </h5>
-            </td>
-            <td>
-              <button>
-                <RiCloseCircleFill className="text-2xl text-body" />
-              </button>
-            </td>
-          </tr>
+          {cart?.map((product) => (
+            <tr key={product._id} className="align-middle">
+              <td>
+                <img src="" alt="product icon" />
+              </td>
+              <td>
+                <h5>{product.title}</h5>
+                <br />
+                <h5>
+                  <span>{cart}</span> x{" "}
+                  <span className="text-primary">TK price</span>
+                </h5>
+              </td>
+              <td>
+                <button>
+                  <RiCloseCircleFill className="text-2xl text-body" />
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div>

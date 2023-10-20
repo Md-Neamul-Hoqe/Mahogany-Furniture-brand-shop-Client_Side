@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import Swal from "sweetalert2";
+import { addToLS, removeFromLS } from "../js/localStorage";
 export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
@@ -19,6 +20,8 @@ const AuthProviders = ({ children }) => {
   const [theme, setTheme] = useState(false);
   const [deletedId, setDeletedId] = useState("");
 
+  /* set products in the cart associated to the id in the localStorage cart */
+  const [cart, setCart] = useState([]);
   // const [favorite, setFavorite] = useState(false);
   const dataTheme = document.getElementsByTagName("html");
 
@@ -54,7 +57,7 @@ const AuthProviders = ({ children }) => {
           },
         });
     });
-    
+
     return () => loggingOut();
   };
 
@@ -94,6 +97,41 @@ const AuthProviders = ({ children }) => {
     };
   }, []);
 
+  const handleRemoveFromCart = (id) => {
+    // visual cart remove
+    const remainingCart = cart.filter((product) => product._id !== id);
+    setCart(remainingCart);
+    // remove from LS
+    removeFromLS(id);
+  };
+
+  const handleAddToCart = (product) => {
+    /* Set Bottle To The State */
+    console.log();
+    const newCart = [...cart];
+
+    if (cart.includes(product))
+      cart.filter((theProduct) => theProduct === product).quantity++;
+    else {
+      newCart.push(product);
+      setCart(newCart);
+    }
+
+    /* Set Bottle id to the LS */
+    addToLS(product._id);
+
+    product._id &&
+      Swal.fire({
+        title: "The product added to the cart successfully.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+  };
+
   const userInfo = {
     user,
     signIn,
@@ -109,6 +147,10 @@ const AuthProviders = ({ children }) => {
     logOut,
     deletedId,
     setDeletedId,
+    cart,
+    setCart,
+    handleRemoveFromCart,
+    handleAddToCart,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

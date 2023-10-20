@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import Cart from "../components/Cart";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const ProductDetails = () => {
   const product = useLoaderData();
-
+  const { handleAddToCart } = useContext(AuthContext);
+  
   const {
     title,
     subtitle,
@@ -21,7 +24,7 @@ const ProductDetails = () => {
   //
   // https://i.ibb.co/VTBqTTx/blog.png
 
-  // 
+  //
   // https://i.ibb.co/z5KD6Z1/furniture.png
   // https://i.ibb.co/L0VhH8G/furniture-1.png
   // https://i.ibb.co/2jRVqjx/Image-living-room.png
@@ -132,16 +135,12 @@ const ProductDetails = () => {
               max={quantity}
               className="input input-bordered input-lg max-w-[100px] text-xl"
             />
-            <input
-              type="button"
-              value="Add to cart"
-              className="input input-bordered input-lg text-xl mx-10"
-            />
-            <input
-              type="button"
-              value="+ Compare"
-              className="input input-bordered input-lg text-xl"
-            />
+            <button
+              onClick={() => handleAddToCart(product)}
+              className="btn btn-outline text-xl mx-10">
+              Add to cart
+            </button>
+            <button className="btn btn-outline text-xl mx-10">+ Compare</button>
           </div>
 
           <hr className="w-full my-5" />

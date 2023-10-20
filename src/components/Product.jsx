@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
-  const { theme, setDeletedId } = useContext(AuthContext);
+  const { theme, handleAddToCart, setDeletedId } = useContext(AuthContext);
 
   const handleDeleteProduct = (id) => {
     console.log(id);
@@ -40,7 +40,9 @@ const Product = ({ product }) => {
     <div className="hero min-h-min">
       {/* Hover / Overlay */}
       <div className="hero-overlay hidden bg-opacity-70 z-50 h-full flex-col items-center justify-center">
-        <button className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+        <button
+          onClick={() => handleAddToCart(product)}
+          className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
           Add to cart
         </button>
         <div className="flex justify-center gap-2 text-white py-10">

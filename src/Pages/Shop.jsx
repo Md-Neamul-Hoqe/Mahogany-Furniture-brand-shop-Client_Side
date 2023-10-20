@@ -9,7 +9,7 @@ const Shop = () => {
   const { deletedId } = useContext(AuthContext);
   const [products, setProducts] = useState(loadedProducts);
 
-  console.log(typeof loadedProducts, products[0]._id, deletedId);
+  // console.log(typeof loadedProducts, products[0]._id, deletedId);
 
   useEffect(() => {
     const loadData = () => {

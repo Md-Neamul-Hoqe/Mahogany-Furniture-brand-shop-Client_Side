@@ -1,4 +1,4 @@
-const getStoredCart = () => {
+const  className="py-5" = () => {
   const storedCartIdString = localStorage.getItem("cart");
   // console.log(storedCartIdString);
   if (storedCartIdString) {
@@ -17,7 +17,6 @@ const addToLS = (id) => {
 
   cartId.push(id);
 
-  console.log(cartId);
   /* save to local storage */
   saveCartToLS(cartId);
 };
