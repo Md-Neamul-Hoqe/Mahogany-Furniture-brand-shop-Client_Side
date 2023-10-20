@@ -7,32 +7,6 @@
 
   - `Example`: Amazon, Walmart, Alibaba, eBay, Target, Best Buy etc.
 
-2. Home page will have a navbar, banner, footer and at least 6 types of brand names having the following information: `brand image`and `brand name`.
-
-5. Create an `Add Product` page where there will be a form for the user to add a product. The form will have:
-
-   - Image
-   - Name
-   - Brand Name
-   - Type (If you choose the `Technology and Electronics` category ,then the types of products will be phone, computer, headphone, etc)
-   - Price
-   - Short description
-   - Rating
-   - Add button
-
-   This will be a private/protected route.
-
-6. On clicking a brand will redirect the user to the page having products based on that brand. On that page, there will be a slider having at least 3 advertisement images and at least 4 products. Each product will have:
-
-   - Image
-   - Name
-   - Band Name
-   - Type (If you choose `Technology and Electronics` category ,then the types of products will be phone, computer, headphone, etc)
-   - Price
-   - Rating
-   - Details button
-   - Update button
-
    > **Note:** Among these six brand types, one of them will not have any available products. You will have to show a relevant message on brand page to inform the users.
 
 7. Clicking on the Details button will take the user to the product detail route. Each route should display detailed information of the product. What you will include in the detailed information is entirely upto you but make sure it is relevant. Make sure to implement the `Add to Cart` button.
@@ -43,30 +17,10 @@
 
 10. Create a `My Cart` page where a user will see all his/her added products. If the user wants, he/she can delete a product. The design is up to you. This will be a private/protected route.
 
-11. Clicking on the `Update button` will redirect the user to a form page where the form will have:
-
-    - Image
-    - Name
-    - Brand Name
-    - Type (If you choose the `Technology and Electronics` category ,then the types of products will be phone, computer, headphone, etc)
-    - Price
-    - Rating
-    - Submit button
-
-    This will be a private/protected route.
-
-> :warning: `Note:` Do not enforce `forget or reset password feature` and the `email verification method`, as it will inconvenience the examiner. If you want, you can add email verification/forget the password after receiving the assignment result.
-
-14. Once logged in, the user name, profile picture and the logout button should appear on the navbar. If the user clicks on the logout button, make sure to log him/her out.
-
-15. Add a 404 page (not found page)
-
 ### :gift: Bonus Requirements:
 
 1. **Commits & readme:**
    - Create a readme for client-side and write about your project (at least 5 bullet points). ** Remember to add your client-side live link to your website here.**
-
-2. After reloading the page of a private route, the user should not be redirected to the login page.
 
 3. Make the website responsive. Make sure the site looks different on desktop and mobile responsive. Tablet responsive is optional
 

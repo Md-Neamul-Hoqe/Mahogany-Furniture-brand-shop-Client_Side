@@ -1,10 +1,27 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const Shop = () => {
-  const products = useLoaderData();
-  console.log(typeof products);
+  const loadedProducts = useLoaderData();
+  const { deletedId } = useContext(AuthContext);
+  const [products, setProducts] = useState(loadedProducts);
+
+  console.log(typeof loadedProducts, products[0]._id, deletedId);
+
+  useEffect(() => {
+    const loadData = () => {
+      typeof loadedProducts === "object" &&
+        setProducts(
+          loadedProducts.filter((product) => product._id !== deletedId)
+        );
+    };
+
+    return () => loadData();
+  }, [deletedId, loadedProducts]);
+
   return (
     <section>
       {/* Banner Section */}

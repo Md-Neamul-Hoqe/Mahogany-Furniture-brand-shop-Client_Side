@@ -26,38 +26,64 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-        loader: () => fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/products`),
+        loader: () =>
+          fetch(
+            `https://mahogany-furniture-server-4lb6ne450.vercel.app/products`
+          ),
       },
       {
         path: "/addProduct",
-        element: <PrivateRoutes><AddProduct /></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <AddProduct />
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/updateProduct/:id",
         element: <UpdateProduct />,
-        loader: ({ params }) =>{ console.log(params);
-          return fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${params.id}`)},
+        loader: ({ params }) => {
+          console.log(params);
+          return fetch(
+            `https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${params.id}`
+          );
+        },
       },
       {
         path: "/productDetails/:id",
-        element: <PrivateRoutes><ProductDetails /></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <ProductDetails />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
-          fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${params.id}`),
+          fetch(
+            `https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${params.id}`
+          ),
       },
       {
         path: "/shop",
         element: <Shop />,
-        loader: () => fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/products`),
+        loader: () =>
+          fetch(
+            `https://mahogany-furniture-server-4lb6ne450.vercel.app/products`
+          ),
       },
       {
         path: "/shop/:brand",
         element: <Shop />,
         loader: ({ params }) =>
-          fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/shop/${params.brand}`),
+          fetch(
+            `https://mahogany-furniture-server-4lb6ne450.vercel.app/shop/${params.brand}`
+          ),
       },
       {
         path: "/cart",
-        element: <PrivateRoutes><CartDetails /></PrivateRoutes>,
+        element: (
+          <PrivateRoutes>
+            <CartDetails />
+          </PrivateRoutes>
+        ),
         loader: () => fetch(`./demo.json`),
       },
       {

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdateProduct = () => {
   const product = useLoaderData();
 
-  // console.log(typeof product);
+  console.log(product);
 
   const handleUpdateProduct = (e) => {
     e.preventDefault();
@@ -21,15 +21,27 @@ const UpdateProduct = () => {
     const details = Form.details.value;
     const photo = Form.photo.value;
 
+    const price = Form.price.value;
+    const ratings = Form.ratings.value;
+    const images = Form.images.value;
+
     const furnitureInfo = {
       id: product._id,
       title,
       subtitle,
       brand,
       type,
-      tags,
-      details,
-      photo,
+      tags: tags.split(","),
+      price: {
+        old:
+          product?.price?.new === price
+            ? product?.price?.old
+            : product?.price?.new,
+        new: price,
+      },
+      ratings,
+      description: { text: details, images: images.split(","), photo: photo },
+      status: "New",
     };
 
     console.log(furnitureInfo);
@@ -128,6 +140,39 @@ const UpdateProduct = () => {
                     />
                   </div>
                 </div>
+
+                <div className="flex max-lg:flex-col gap-6">
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Price</h4>
+                    </label>
+                    <input
+                      type="number"
+                      min={0}
+                      placeholder="Enter Price (in number)"
+                      name="price"
+                      className="input input-bordered"
+                      defaultValue={product?.price?.new}
+                      required
+                    />
+                  </div>
+
+                  <div className="form-control flex-1">
+                    <label className="label">
+                      <h4 className="label-text">Ratings</h4>
+                    </label>
+                    <input
+                      type="number"
+                      min={0}
+                      max={5}
+                      placeholder="Enter Ratings 0 to 5"
+                      name="ratings"
+                      className="input input-bordered"
+                      defaultValue={product?.ratings}
+                      required
+                    />
+                  </div>
+                </div>
                 <div className="flex max-lg:flex-col gap-6">
                   <div className="form-control flex-1">
                     <label className="label">
@@ -159,7 +204,7 @@ const UpdateProduct = () => {
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <h4 className="label-text">Photo</h4>
+                    <h4 className="label-text">Photo for poster</h4>
                   </label>
                   <input
                     type="url"
@@ -167,6 +212,21 @@ const UpdateProduct = () => {
                     name="photo"
                     className="input input-bordered"
                     defaultValue={product?.description?.photo}
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <h4 className="label-text">Photos for details</h4>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="Enter Photo URLs (' , ' separated)"
+                    defaultValue={JSON.parse(
+                      JSON.stringify(product?.description?.images)
+                    )}
+                    name="images"
+                    className="input input-bordered"
                     required
                   />
                 </div>

@@ -13,16 +13,21 @@ const AddProduct = () => {
     const type = Form.type.value;
     const tags = Form.tags.value;
     const details = Form.details.value;
+    const price = Form.price.value;
+    const ratings = Form.ratings.value;
     const photo = Form.photo.value;
+    const images = Form.images.value;
 
     const furnitureInfo = {
       title,
       subtitle,
       brand,
       type,
-      tags,
-      details,
-      photo,
+      tags: tags.split(","),
+      price: { new: price },
+      ratings,
+      description: { text: details, images: images.split(","), photo: photo },
+      status: "New",
     };
 
     fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/products", {
@@ -65,7 +70,7 @@ const AddProduct = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Product Title"
+                    placeholder="Enter Title"
                     name="title"
                     className="input input-bordered"
                     required
@@ -77,7 +82,7 @@ const AddProduct = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Product Sub Title"
+                    placeholder="Enter Sub Title"
                     name="subtitle"
                     className="input input-bordered"
                     required
@@ -91,7 +96,7 @@ const AddProduct = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Product Brand"
+                    placeholder="Enter Brand"
                     name="brand"
                     className="input input-bordered"
                     required
@@ -104,8 +109,39 @@ const AddProduct = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Product Type"
+                    placeholder="Enter Type"
                     name="type"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="flex max-lg:flex-col gap-6">
+                <div className="form-control flex-1">
+                  <label className="label">
+                    <h4 className="label-text">Price</h4>
+                  </label>
+                  <input
+                    type="number"
+                    min={0}
+                    placeholder="Enter Price (in number)"
+                    name="price"
+                    className="input input-bordered"
+                    required
+                  />
+                </div>
+
+                <div className="form-control flex-1">
+                  <label className="label">
+                    <h4 className="label-text">Ratings</h4>
+                  </label>
+                  <input
+                    type="number"
+                    min={0}
+                    max={5}
+                    placeholder="Enter Ratings 0 to 5"
+                    name="ratings"
                     className="input input-bordered"
                     required
                   />
@@ -118,7 +154,7 @@ const AddProduct = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter Product Tags"
+                    placeholder="Enter Tags ( ' , ' separated)"
                     name="tags"
                     className="input input-bordered"
                     required
@@ -131,7 +167,7 @@ const AddProduct = () => {
                   </label>
                   <textarea
                     type="text"
-                    placeholder="Enter Product Details"
+                    placeholder="Enter Details"
                     name="details"
                     className="textarea textarea-bordered"
                     required
@@ -140,12 +176,24 @@ const AddProduct = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <h4 className="label-text">Photo</h4>
+                  <h4 className="label-text">Photo for poster</h4>
                 </label>
                 <input
                   type="url"
                   placeholder="Enter Photo URL"
                   name="photo"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <h4 className="label-text">Photos for details</h4>
+                </label>
+                <input
+                  type="url"
+                  placeholder="Enter Photo URLs (' , ' separated)"
+                  name="images"
                   className="input input-bordered"
                   required
                 />
@@ -162,7 +210,7 @@ const AddProduct = () => {
         </div>
       </div>
       <Helmet>
-        <title>{'Mahogany | Add Product'}</title>
+        <title>{"Mahogany | Add Product"}</title>
       </Helmet>
     </div>
   );

@@ -6,9 +6,13 @@ const Error404 = () => {
   return (
     <div>
       <Navbar />
-      <img className="w-full" src="./src/assets/404.gif" alt="error page" />
+      <img
+        className="w-full"
+        src="https://i.ibb.co/9p9yL6K/404.gif"
+        alt="error page"
+      />
       <Helmet>
-        <title>{'Mahogany | Not Found'}</title>
+        <title>{"Mahogany | Not Found"}</title>
       </Helmet>
       <Footer />
     </div>

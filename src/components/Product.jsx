@@ -85,7 +85,7 @@ const Product = ({ product }) => {
       </div>
 
       {/* Product */}
-      <div className="card card-compact justify-start p-0 min-w-min h-full bg-gray-100 rounded-none">
+      <div className="card card-compact justify-start p-0 min-w-min h-full rounded-none">
         <figure>
           <img
             src={product?.description?.photo}
@@ -98,10 +98,11 @@ const Product = ({ product }) => {
             {product.title}
           </h5>
           <small className="text-sub-title">{product?.subtitle}</small>
+          <small className="text-title">Type: {product?.type}</small>
           <p className="flex justify-between items-end gap-2">
             <span className="text-xl">Tk {product?.price?.new}</span>
             <span className="text-body line-through">
-              Tk {product?.price?.old}
+              {product?.price?.old && `Tk ${product?.price?.old}`}
             </span>
           </p>
         </div>

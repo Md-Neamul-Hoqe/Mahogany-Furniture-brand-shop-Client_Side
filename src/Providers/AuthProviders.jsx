@@ -41,6 +41,7 @@ const AuthProviders = ({ children }) => {
 
   const logOut = () => {
     setLoading(true);
+
     const loggingOut = signOut(auth).then((res) => {
       if (!res)
         Swal.fire({
@@ -53,6 +54,7 @@ const AuthProviders = ({ children }) => {
           },
         });
     });
+    
     return () => loggingOut();
   };
 

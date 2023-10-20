@@ -4,7 +4,6 @@ import Products from "./components/Products";
 import Stat from "./components/Stat";
 import Brand from "./components/brand";
 import { useLoaderData } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   const products = useLoaderData();
