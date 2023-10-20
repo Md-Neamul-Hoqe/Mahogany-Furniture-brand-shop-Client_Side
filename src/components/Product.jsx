@@ -22,12 +22,9 @@ const Product = ({ product }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://mahogany-furniture-server-4lb6ne450.vercel.app/products/${id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`https://mahogany-furniture-server.vercel.app/products/${id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -60,7 +57,7 @@ const Product = ({ product }) => {
             Like
           </Link>
         </div>
-        <div>
+        <div className="my-4 flex justify-between">
           <Link
             to={`/productDetails/${product._id}`}
             product={product}

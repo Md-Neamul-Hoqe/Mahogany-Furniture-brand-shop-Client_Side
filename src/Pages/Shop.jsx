@@ -25,32 +25,6 @@ const Shop = () => {
   return (
     <section>
       {/* Banner Section */}
-      {/* <section>
-        <div
-          className="hero min-h-fit top-16 px-14"
-          style={{
-            backgroundImage: 'url("https://i.ibb.co/Q9hThXf/banner-shop.png")',
-            backgroundOrigin: "center",
-            backgroundSize: "100vw",
-          }}>
-          <div className="hero-content w-full flex-col lg:flex-row min-h-[312px]">
-            <aside className="card">
-              <div className="card-body">
-                <h2 className="text-title">Shop</h2>
-                <div className="text-sm breadcrumbs">
-                  <ul>
-                    <li>
-                      <a className="text-title font-medium">Home</a>
-                    </li>
-                    <li className="font-light">Shop</li>
-                  </ul>
-                </div>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section> */}
-
       <section>
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">

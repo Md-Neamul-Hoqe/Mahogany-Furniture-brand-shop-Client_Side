@@ -58,7 +58,7 @@ const SignUp = () => {
         /* navigate after Registration */
         location?.state ? navigate(location?.state) : navigate("/");
 
-        fetch("https://mahogany-furniture-server-4lb6ne450.vercel.app/users", {
+        fetch("https://mahogany-furniture-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

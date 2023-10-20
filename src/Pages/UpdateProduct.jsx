@@ -46,7 +46,7 @@ const UpdateProduct = () => {
 
     console.log(furnitureInfo);
 
-    fetch(`https://mahogany-furniture-server-4lb6ne450.vercel.app/products`, {
+    fetch(`https://mahogany-furniture-server.vercel.app/products`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
