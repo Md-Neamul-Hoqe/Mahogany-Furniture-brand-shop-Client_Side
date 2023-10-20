@@ -8,7 +8,7 @@ const Shop = () => {
   return (
     <section>
       {/* Banner Section */}
-      <section>
+      {/* <section>
         <div
           className="hero min-h-fit top-16 px-14"
           style={{
@@ -17,7 +17,6 @@ const Shop = () => {
             backgroundSize: "100vw",
           }}>
           <div className="hero-content w-full flex-col lg:flex-row min-h-[312px]">
-            {/* right side */}
             <aside className="card">
               <div className="card-body">
                 <h2 className="text-title">Shop</h2>
@@ -32,6 +31,32 @@ const Shop = () => {
               </div>
             </aside>
           </div>
+        </div>
+      </section> */}
+
+      <section>
+        <div className="carousel w-full">
+          <div id="item1" className="carousel-item w-full">
+            <img src="./src/assets/shop slider -1.png" className="w-full" />
+          </div>
+          <div id="item2" className="carousel-item w-full">
+            <img src="./src/assets/shop slider -2.png" className="w-full" />
+          </div>
+          <div id="item3" className="carousel-item w-full">
+            <img src="./src/assets/shop slider -3.png" className="w-full" />
+          </div>
+        </div>
+
+        <div className="flex justify-center w-full py-2 gap-2">
+          <a href="#item1" className="btn btn-xs">
+            1
+          </a>
+          <a href="#item2" className="btn btn-xs">
+            2
+          </a>
+          <a href="#item3" className="btn btn-xs">
+            3
+          </a>
         </div>
       </section>
 
