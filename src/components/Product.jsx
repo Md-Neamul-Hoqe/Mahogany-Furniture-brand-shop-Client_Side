@@ -22,7 +22,7 @@ const Product = ({ product }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://mahogany-furniture-server.vercel.app/products/${id}`, {
+        fetch(`http://127.0.0.1:5000/products/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -41,6 +41,7 @@ const Product = ({ product }) => {
       {/* Hover / Overlay */}
       <div className="hero-overlay hidden bg-opacity-70 z-50 h-full flex-col items-center justify-center">
         <button
+          type="button"
           onClick={() => handleAddToCart(product)}
           className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
           Add to cart

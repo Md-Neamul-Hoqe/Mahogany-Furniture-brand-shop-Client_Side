@@ -26,7 +26,7 @@ const AuthProviders = ({ children }) => {
   const dataTheme = document.getElementsByTagName("html");
 
   // useEffect(() => {
-  //   fetch(`https://mahogany-furniture-server.vercel.app/products`)
+  //   fetch(`http://127.0.0.1:5000/products`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setProducts(data);
@@ -115,45 +115,36 @@ const AuthProviders = ({ children }) => {
 
   /* Get Cart from DB */
   useEffect(() => {
-    fetch(`https://mahogany-furniture-server.vercel.app/cart`)
+    fetch("http://127.0.0.1:5000/cart")
       .then((res) => res.json())
       .then((cartDB) => {
+        console.log(cartDB);
         if (typeof cartDB === "object" && cartDB.length) setCart(...cartDB);
-      });
+      })
+      .catch((error) => console.error(error));
   }, []);
-
 
   const handleAddToCart = (product) => {
     /* Set Bottle To The State */
     const newCart = [...cart];
 
-    if (cart.includes(product)) {
-      const idxOfTheProduct = cart.indexOf(product);
-      const quantity = cart[idxOfTheProduct].quantity++;
+    const idxOfTheProduct = cart.indexOf(product);
+    if (idxOfTheProduct > -1) {
+      product.purchase = cart[idxOfTheProduct].purchase + 1;
 
-      product.quantity = quantity;
-
-      console.log(quantity);
-
-      const productQty = {
-        quantity: quantity,
-      };
-
-      fetch(
-        `https://mahogany-furniture-server.vercel.app/cart/${product._id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(productQty),
-        }
-      )
+      fetch(`http://127.0.0.1:5000/cart/${product._id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(product),
+      })
         .then((res) => res.json())
         .then((data) => {
-          if (data.modifiedCount)
+          console.log(data);
+          if (data.modifiedCount || data.upsertedCount)
             Swal.fire({
-              title: `The product quantity updated to your cart as ${quantity} successfully.`,
+              title: `You selected ${product.purchase} pics of the product successfully.`,
 
               showClass: {
                 popup: "animate__animated animate__fadeInDown",
@@ -166,12 +157,14 @@ const AuthProviders = ({ children }) => {
         });
     } else {
       /* for local state */
-      product.quantity = 1;
+      product.purchase = 1;
       newCart.push(product);
       setCart(newCart);
 
+      console.log(newCart);
+
       /* For database */
-      fetch(`https://mahogany-furniture-server.vercel.app/cart`, {
+      fetch(`http://127.0.0.1:5000/cart`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

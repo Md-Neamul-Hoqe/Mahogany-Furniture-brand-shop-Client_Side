@@ -54,7 +54,7 @@ const SignIn = () => {
         location?.state ? navigate(location?.state) : navigate("/");
 
         /* Update user information */
-        fetch("https://mahogany-furniture-server.vercel.app/users", {
+        fetch("http://127.0.0.1:5000/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

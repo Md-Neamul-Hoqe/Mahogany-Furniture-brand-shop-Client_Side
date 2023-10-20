@@ -27,7 +27,7 @@ const Cart = () => {
                 <h5>{product.title}</h5>
                 <br />
                 <h5>
-                  <span>{cart}</span> x{" "}
+                  <span>{product?.purchase}</span> x{" "}
                   <span className="text-primary">TK price</span>
                 </h5>
               </td>

@@ -7,6 +7,8 @@ import { AuthContext } from "../Providers/AuthProviders";
 const Products = ({ products }) => {
   const { deletedId } = useContext(AuthContext);
 
+  console.log(products);
+
   const [updatedProducts, setUpdatedProducts] = useState(
     typeof products === "object" ? products : []
   );
@@ -28,7 +30,10 @@ const Products = ({ products }) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 max-w-5xl mx-auto">
           {updatedProducts.slice(0, 8).map((product, idx) => (
-            <Product key={idx} product={product} />
+            <Product
+              key={idx}
+              product={typeof product === "object" ? product : {}}
+            />
           ))}
         </div>
       )}
@@ -46,4 +51,5 @@ const Products = ({ products }) => {
 Products.propTypes = {
   products: PropTypes.array,
 };
+
 export default Products;

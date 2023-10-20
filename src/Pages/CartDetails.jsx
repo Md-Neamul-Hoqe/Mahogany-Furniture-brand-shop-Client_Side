@@ -70,8 +70,8 @@ const CartDetails = () => {
             ) : (
               <tr>
                 <td
-                  colSpan={4}
-                  className="border min-h-[calc(100vh/3)] w-full flex justify-center items-center">
+                  colSpan="5"
+                  className="border min-h-[calc(100vh/3)] text-center">
                   <h3>Your Cart Is Empty.</h3>
                 </td>
               </tr>

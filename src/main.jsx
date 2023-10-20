@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <App />,
         loader: () =>
-          fetch(`https://mahogany-furniture-server.vercel.app/products`),
+          fetch(`http://127.0.0.1:5000/products`),
       },
       {
         path: "/addProduct",
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => {
           console.log(params);
           return fetch(
-            `https://mahogany-furniture-server.vercel.app/products/${params.id}`
+            `http://127.0.0.1:5000/products/${params.id}`
           );
         },
       },
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://mahogany-furniture-server.vercel.app/products/${params.id}`
+            `http://127.0.0.1:5000/products/${params.id}`
           ),
       },
       {
@@ -72,14 +72,14 @@ const router = createBrowserRouter([
         path: "/shop",
         element: <Shop />,
         loader: () =>
-          fetch(`https://mahogany-furniture-server.vercel.app/products`),
+          fetch(`http://127.0.0.1:5000/products`),
       },
       {
         path: "/shop/:brand",
         element: <Shop />,
         loader: ({ params }) =>
           fetch(
-            `https://mahogany-furniture-server.vercel.app/shop/${params.brand}`
+            `http://127.0.0.1:5000/shop/${params.brand}`
           ),
       },
       {

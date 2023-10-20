@@ -30,7 +30,7 @@ const AddProduct = () => {
       status: "New",
     };
 
-    fetch("https://mahogany-furniture-server.vercel.app/products", {
+    fetch("http://127.0.0.1:5000/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
