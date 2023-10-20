@@ -10,7 +10,6 @@ import {
 } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import Swal from "sweetalert2";
-import { addToLS } from "../js/localStorage";
 export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
@@ -123,37 +122,6 @@ const AuthProviders = ({ children }) => {
       });
   }, []);
 
-  /* Load Cart from LS after products load in site */
-  // const storedCartId = getStoredCart();
-  // const uniqueIds = new Set(...[storedCartId]);
-
-  // const savedCart = [];
-  // for (const id of uniqueIds) {
-  //   /* Get The Bottle id From Bottles */
-  //   const product = products?.find((product) => product._id === id);
-
-  //   if (product) {
-  //     const Qty = storedCartId.filter((idInCart) => idInCart === id)?.length;
-
-  //     product.quantity = Qty;
-
-  //     savedCart.push(product);
-
-  //     /* Save cart to state */
-  //     setCart(savedCart);
-
-  //     // fetch("https://mahogany-furniture-server.vercel.app/cart", {
-  //     //   method: "POST",
-  //     //   headers: {
-  //     //     "content-type": "application/json",
-  //     //   },
-  //     //   body: JSON.stringify(savedCart),
-  //     // })
-  //     //   .then((res) => res.json())
-  //     //   .then((data) => console.log(data));
-  //     // // console.log("savedCart", savedCart);
-  //   }
-  // }
 
   const handleAddToCart = (product) => {
     /* Set Bottle To The State */

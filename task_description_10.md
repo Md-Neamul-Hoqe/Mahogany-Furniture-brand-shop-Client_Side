@@ -9,9 +9,7 @@
 
    > **Note:** Among these six brand types, one of them will not have any available products. You will have to show a relevant message on brand page to inform the users.
 
-7. Clicking on the Details button will take the user to the product detail route. Each route should display detailed information of the product. What you will include in the detailed information is entirely upto you but make sure it is relevant. Make sure to implement the `Add to Cart` button.
-
-8. The product detail route will be a private/protected route. Please make sure that if the user is not logged in, the private route redirects to the login page.
+7. Make sure to implement the `Add to Cart` button.
 
 9. Clicking the `Add to Cart` button will store your product information in to the database. Inform the user with a success message using a toast/alert. `Do not use the browser alert.`
 
