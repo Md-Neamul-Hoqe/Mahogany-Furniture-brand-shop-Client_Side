@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 
 const Products = () => {
-  const { products} = useContext(AuthContext);
+  const { products } = useContext(AuthContext);
 
   return (
     <section>
@@ -13,7 +13,7 @@ const Products = () => {
       {!products?.length || typeof products === "string" ? (
         <div className="min-h-screen flex justify-center items-center">
           <span className="loading loading-infinity w-40 text-primary"></span>
-          {!products?.length && (
+          {typeof products === "string" && (
             <>
               <br />
               <details>

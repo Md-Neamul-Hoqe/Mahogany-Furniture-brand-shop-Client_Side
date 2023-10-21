@@ -58,7 +58,7 @@ const SignUp = () => {
         /* navigate after Registration */
         location?.state ? navigate(location?.state) : navigate("/");
 
-        fetch("http://127.0.0.1:5000/users", {
+        fetch("https://mahogany-furniture-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -67,7 +67,8 @@ const SignUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
+
             if (data?.insertedId) {
               console.log("User info stored in database successfully.");
             } else {
@@ -162,7 +163,9 @@ const SignUp = () => {
               </span>
             </Link>
             {error ? (
-              <p className="text-red-800 bg-red-300 p-3 rounded-lg">{error}</p>
+              <p className="text-red-800 bg-red-300 p-3 rounded-lg">
+                {JSON.stringify(error)}
+              </p>
             ) : (
               ""
             )}

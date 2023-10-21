@@ -6,7 +6,7 @@ const Brand = () => {
   const [brands, setBrands] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/brands")
+    fetch("https://mahogany-furniture-server.vercel.app/brands")
       .then((res) => res.json())
       .then((data) => setBrands(data));
   }, []);

@@ -26,7 +26,7 @@ const AuthProviders = ({ children }) => {
   const dataTheme = document.getElementsByTagName("html");
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/products`)
+    fetch(`https://mahogany-furniture-server.vercel.app/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -108,7 +108,7 @@ const AuthProviders = ({ children }) => {
 
   /* Get Cart from DB */
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/cart`)
+    fetch(`https://mahogany-furniture-server.vercel.app/cart`)
       .then((res) => res.json())
       .then((cartDB) => {
         if (typeof cartDB === "object" && cartDB.length)
@@ -131,21 +131,23 @@ const AuthProviders = ({ children }) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          // visual cart remove
-          const remainingCart = cart.filter(
-            (product) => product._id !== id && product.email === user?.email
-          );
-          setCart(remainingCart);
-          // remove from LS
-          // removeFromLS(id);
-
           /* Remove from DB */
-          fetch(`http://127.0.0.1:5000/cart/${id}`, {
+          fetch(`https://mahogany-furniture-server.vercel.app/cart/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
             .then((data) => {
+              // console.log(data);
+
               if (data.deletedCount) {
+                // visual cart remove
+                const remainingCart = cart.filter(
+                  (product) => product._id !== id
+                );
+                setCart(remainingCart);
+                // remove from LS
+                // removeFromLS(id);
+
                 Swal.fire(
                   "Deleted!",
                   "The product is removed from cart successfully.",
@@ -157,22 +159,36 @@ const AuthProviders = ({ children }) => {
       });
   };
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (product, purchase = null) => {
     /* Set Bottle To The State */
 
     const newCart = [...cart];
 
-    const idxOfTheProduct = cart.indexOf(product);
-    if (idxOfTheProduct > -1) {
-      product.purchase = cart[idxOfTheProduct].purchase + 1;
+    const productInCart = cart.find((e) => e._id === product._id);
 
-      fetch(`http://127.0.0.1:5000/cart/${product._id}`, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(product),
-      })
+    const idxOfTheProduct = cart.indexOf(productInCart);
+
+    // console.log(idxOfTheProduct);
+
+    if (idxOfTheProduct !== -1) {
+      if (!purchase) {
+        product.purchase = cart[idxOfTheProduct]?.purchase + 1;
+        cart[idxOfTheProduct].purchase += 1;
+      } else {
+        product.purchase = purchase;
+        cart[idxOfTheProduct].purchase = purchase;
+      }
+
+      fetch(
+        `https://mahogany-furniture-server.vercel.app/cart/${product._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(product),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.modifiedCount || data.upsertedCount)
@@ -195,14 +211,14 @@ const AuthProviders = ({ children }) => {
       //   price: product.price.new,
       //   quantity: product.quantity,
       // };
-      product.purchase = 1;
+      product.purchase = purchase ? purchase : 1;
       product.email = user?.email;
 
       newCart.push(product);
       setCart(newCart);
 
       /* For database */
-      fetch(`http://127.0.0.1:5000/cart`, {
+      fetch(`https://mahogany-furniture-server.vercel.app/cart`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

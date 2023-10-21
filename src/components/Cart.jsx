@@ -6,7 +6,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 const Cart = () => {
   const { cart } = useContext(AuthContext);
 
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <div className="absolute -top-20 right-0 max-w-md w-[500px] flex flex-col bg-white px-5 border shadow-lg z-50 opacity-0">

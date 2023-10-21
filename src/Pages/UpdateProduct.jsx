@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdateProduct = () => {
   const product = useLoaderData();
 
-  console.log(product);
+  // console.log(product);
 
   const handleUpdateProduct = (e) => {
     e.preventDefault();
@@ -44,9 +44,9 @@ const UpdateProduct = () => {
       status: "New",
     };
 
-    console.log(furnitureInfo);
+    // console.log(furnitureInfo);
 
-    fetch(`http://127.0.0.1:5000/products`, {
+    fetch(`https://mahogany-furniture-server.vercel.app/products`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

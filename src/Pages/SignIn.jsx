@@ -25,7 +25,7 @@ const SignIn = () => {
       .then((res) => {
         /* User logged in successfully */
         setUser(res.user);
-        console.log(location);
+        // console.log(location);
 
         e.target.reset();
 
@@ -54,7 +54,7 @@ const SignIn = () => {
         location?.state ? navigate(location?.state) : navigate("/");
 
         /* Update user information */
-        fetch("http://127.0.0.1:5000/users", {
+        fetch("https://mahogany-furniture-server.vercel.app/users", {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -63,7 +63,7 @@ const SignIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
 
             if (data.modifiedCount) {
               setTimeout(() => {

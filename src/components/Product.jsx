@@ -12,7 +12,7 @@ const Product = ({ product }) => {
     useContext(AuthContext);
 
   const handleDeleteProduct = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -23,7 +23,7 @@ const Product = ({ product }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://127.0.0.1:5000/products/${id}`, {
+        fetch(`https://mahogany-furniture-server.vercel.app/products/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -28,13 +28,13 @@ const Shop = () => {
       <section>
         <div className="carousel w-full">
           <div id="item1" className="carousel-item w-full">
-            <img src="./src/assets/shop slider -1.png" className="w-full" />
+            <img src="/src/assets/shop slider -1.png" className="w-full" />
           </div>
           <div id="item2" className="carousel-item w-full">
-            <img src="./src/assets/shop slider -2.png" className="w-full" />
+            <img src="/src/assets/shop slider -2.png" className="w-full" />
           </div>
           <div id="item3" className="carousel-item w-full">
-            <img src="./src/assets/shop slider -3.png" className="w-full" />
+            <img src="/src/assets/shop slider -3.png" className="w-full" />
           </div>
         </div>
 

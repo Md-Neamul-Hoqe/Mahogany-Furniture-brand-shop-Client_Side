@@ -1,6 +1,6 @@
 // import { useContext } from "react";
 // import { AuthContext } from "../Providers/AuthProviders";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Cart from "../components/Cart";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
@@ -10,35 +10,18 @@ const ProductDetails = () => {
   const product = useLoaderData();
   const { handleAddToCart } = useContext(AuthContext);
 
-  // const handleAddToCart = () => {
-  //   const newCart = [];
-  //   product.purchase = 1;
-  //   newCart.push(product);
-  //   // setCart(newCart);
-
-  //   /* For database */
-  //   fetch(`http://127.0.0.1:5000/cart`, {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(product),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       if (data.acknowledged)
-  //         Swal.fire({
-  //           title: "The product added to your cart successfully.",
-  //           showClass: {
-  //             popup: "animate__animated animate__fadeInDown",
-  //           },
-  //           hideClass: {
-  //             popup: "animate__animated animate__fadeOutUp",
-  //           },
-  //         });
-  //     });
-  // };
+  const [getQuantity, setGetQuantity] = useState(0);
+  const quantityField = document.getElementById("quantity");
+  useEffect(() => {
+    quantityField?.addEventListener("blur", () => {
+      const quantityField = document.getElementById("quantity")?.value;
+      
+      // console.log(parseInt(quantityField));
+      setGetQuantity(
+        isNaN(parseInt(quantityField)) ? 0 : parseInt(quantityField)
+      );
+    });
+  }, [quantityField]);
 
   const {
     title,
@@ -51,27 +34,6 @@ const ProductDetails = () => {
     tags,
     brand,
   } = product;
-
-  //
-  //
-  // https://i.ibb.co/VTBqTTx/blog.png
-
-  //
-  // https://i.ibb.co/z5KD6Z1/furniture.png
-  // https://i.ibb.co/L0VhH8G/furniture-1.png
-  // https://i.ibb.co/2jRVqjx/Image-living-room.png
-  //
-  //
-  //
-  // https://i.ibb.co/n85Lc3k/bedroom.png
-  // https://i.ibb.co/ZxRH3yj/lolioto.png
-  // https://i.ibb.co/my2JrY2/syltherine.png
-  // https://i.ibb.co/XSbgmTK/Outdoor-sofa-set-1.png
-  // https://i.ibb.co/vqCn804/Outdoor-sofa-set-2.png
-  // https://i.ibb.co/JF9hSd7/recent-Post.png
-  // https://i.ibb.co/gWw47V4/recent-Post-1.png
-  //
-  //
 
   return (
     <div className="relative">
@@ -161,6 +123,7 @@ const ProductDetails = () => {
 
           <div className="">
             <input
+              id="quantity"
               type="number"
               placeholder="Qty"
               min={0}
@@ -169,8 +132,10 @@ const ProductDetails = () => {
             />
             <button
               type="button"
-              onClick={() => handleAddToCart(product)}
-              className="btn btn-outline text-xl mx-10">
+              onClick={() => handleAddToCart(product, getQuantity)}
+              className={`btn btn-outline text-xl mx-10 ${
+                getQuantity ? "" : "btn-disabled"
+              }`}>
               Add to cart
             </button>
             <button className="btn btn-outline text-xl mx-10">+ Compare</button>
