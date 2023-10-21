@@ -5,7 +5,6 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const CartDetails = () => {
   const { cart, handleRemoveFromCart, theme } = useContext(AuthContext);
-  console.log(cart);
   const total = cart?.map((product) => product?.price?.new * product?.purchase);
   return (
     <>
@@ -64,10 +63,10 @@ const CartDetails = () => {
                   <td className="text-center">TK. {product?.price?.new}</td>
                   <td className="text-center">{product?.purchase}</td>
                   <td className="text-center">TK. {total[idx]}</td>
-                  <td
+                  <td className="text-center">
+                    <button
                     onClick={() => handleRemoveFromCart(product._id)}
-                    className="text-red-600">
-                    delete
+                    className="text-red-600">delete</button>
                   </td>
                 </tr>
               ))

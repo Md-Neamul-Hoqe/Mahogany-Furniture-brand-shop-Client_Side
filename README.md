@@ -16,7 +16,7 @@ This is an e-commerce web site. Here we offer many types of wood furniture
 
 ## Home Page Features
 
-In our home page we use six sections - navbar [Nav links: Home with two private page (Add product and Cart)], Banner, 6 Brand, Sample Products, Stat section, Footer section.
+In our home page we use six sections - navbar [Nav links: Home with two private page (Add product and Cart)], Banner, 6 Brand, Sample Products [Extra section], Stat section [Extra section], Footer section.
 
 ## Animation
 

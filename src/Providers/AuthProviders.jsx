@@ -17,21 +17,21 @@ const AuthProviders = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [theme, setTheme] = useState(false);
-  const [deletedId, setDeletedId] = useState("");
-  // const [products, setProducts] = useState([]);
+  const [deletedId, setDeletedId] = useState(0);
+  const [products, setProducts] = useState([]);
 
   /* set products in the cart associated to the id in the localStorage cart */
   const [cart, setCart] = useState([]);
   // const [favorite, setFavorite] = useState(false);
   const dataTheme = document.getElementsByTagName("html");
 
-  // useEffect(() => {
-  //   fetch(`http://127.0.0.1:5000/products`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setProducts(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch(`http://127.0.0.1:5000/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  }, []);
 
   const toggleTheme = () => {
     theme
@@ -108,15 +108,16 @@ const AuthProviders = ({ children }) => {
 
   /* Get Cart from DB */
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/cart")
+    fetch(`http://127.0.0.1:5000/cart`)
       .then((res) => res.json())
       .then((cartDB) => {
-        console.log(cartDB);
-
-        if (typeof cartDB === "object" && cartDB.length) setCart([...cartDB]);
+        if (typeof cartDB === "object" && cartDB.length)
+          setCart([
+            ...cartDB.filter((product) => product.email === user?.email),
+          ]);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [user?.email]);
 
   const handleRemoveFromCart = (id, purchase) => {
     if (!purchase)
@@ -131,7 +132,9 @@ const AuthProviders = ({ children }) => {
       }).then((result) => {
         if (result.isConfirmed) {
           // visual cart remove
-          const remainingCart = cart.filter((product) => product._id !== id);
+          const remainingCart = cart.filter(
+            (product) => product._id !== id && product.email === user?.email
+          );
           setCart(remainingCart);
           // remove from LS
           // removeFromLS(id);
@@ -156,7 +159,7 @@ const AuthProviders = ({ children }) => {
 
   const handleAddToCart = (product) => {
     /* Set Bottle To The State */
-    console.log(cart);
+
     const newCart = [...cart];
 
     const idxOfTheProduct = cart.indexOf(product);
@@ -172,7 +175,6 @@ const AuthProviders = ({ children }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.modifiedCount || data.upsertedCount)
             Swal.fire({
               title: `You selected ${product.purchase} pics of the product successfully.`,
@@ -188,7 +190,14 @@ const AuthProviders = ({ children }) => {
         });
     } else {
       /* for local state */
+      // const newProductInCart = {
+      //   title: product.title,
+      //   price: product.price.new,
+      //   quantity: product.quantity,
+      // };
       product.purchase = 1;
+      product.email = user?.email;
+
       newCart.push(product);
       setCart(newCart);
 
@@ -202,7 +211,6 @@ const AuthProviders = ({ children }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.acknowledged)
             Swal.fire({
               title: "The product added to your cart successfully.",
@@ -230,6 +238,9 @@ const AuthProviders = ({ children }) => {
     //     },
     //   });
   };
+  const updateProducts = (id) => {
+    setProducts(products.filter((product) => product._id !== id));
+  };
 
   const userInfo = {
     user,
@@ -250,6 +261,9 @@ const AuthProviders = ({ children }) => {
     setCart,
     handleRemoveFromCart,
     handleAddToCart,
+    products,
+    setProducts,
+    updateProducts,
   };
   return (
     <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>

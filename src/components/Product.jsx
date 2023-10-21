@@ -8,7 +8,8 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const Product = ({ product }) => {
-  const { theme, handleAddToCart, setDeletedId } = useContext(AuthContext);
+  const { user, theme, handleAddToCart, updateProducts } =
+    useContext(AuthContext);
 
   const handleDeleteProduct = (id) => {
     console.log(id);
@@ -28,7 +29,7 @@ const Product = ({ product }) => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              setDeletedId(product._id);
+              updateProducts(product._id);
               Swal.fire("Deleted!", "The product has been deleted.", "success");
             }
           });
@@ -39,7 +40,7 @@ const Product = ({ product }) => {
   return (
     <div className="hero min-h-min">
       {/* Hover / Overlay */}
-      <div className="hero-overlay hidden bg-opacity-70 z-50 h-full flex-col items-center justify-center">
+      <div className="hero-overlay hidden bg-opacity-70 z-40 h-full flex-col items-center justify-center">
         <button
           type="button"
           onClick={() => handleAddToCart(product)}
@@ -60,28 +61,32 @@ const Product = ({ product }) => {
             Like
           </Link>
         </div>
-        <div className="my-4 flex justify-between">
-          <Link
-            to={`/productDetails/${product._id}`}
-            product={product}
-            className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
-            Details
-          </Link>
-          <Link
-            to={`/updateProduct/${product._id}`}
-            product={product}
-            className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
-            Update
-          </Link>
-        </div>
-        <div>
-          <button
-            type="button"
-            onClick={() => handleDeleteProduct(product._id)}
-            className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
-            Delete
-          </button>
-        </div>
+        {user && (
+          <>
+            <div className="my-4 flex justify-between">
+              <Link
+                to={`/productDetails/${product._id}`}
+                product={product}
+                className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+                Details
+              </Link>
+              <Link
+                to={`/updateProduct/${product._id}`}
+                product={product}
+                className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+                Update
+              </Link>
+            </div>
+            <div>
+              <button
+                type="button"
+                onClick={() => handleDeleteProduct(product._id)}
+                className="btn px-5 rounded-none capitalize text-primary font-semibold leading-loose">
+                Delete
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
       {/* Product */}
