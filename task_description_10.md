@@ -6,14 +6,7 @@
 - **Category 5**: `Retail and E-commerce`
 
   - `Example`: Amazon, Walmart, Alibaba, eBay, Target, Best Buy etc.
-
-   > **Note:** Among these six brand types, one of them will not have any available products. You will have to show a relevant message on brand page to inform the users.
-
-### :gift: Bonus Requirements:
-
-1. **Commits & readme:**
-   - Create a readme for client-side and write about your project (at least 5 bullet points). ** Remember to add your client-side live link to your website here.**
-
+  
 * cart for specific user
 
 3. Make the website responsive. Make sure the site looks different on desktop and mobile responsive. Tablet responsive is optional

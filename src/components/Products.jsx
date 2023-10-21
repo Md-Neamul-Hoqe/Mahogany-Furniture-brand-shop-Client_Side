@@ -7,8 +7,6 @@ import { AuthContext } from "../Providers/AuthProviders";
 const Products = ({ products }) => {
   const { deletedId } = useContext(AuthContext);
 
-  console.log(products);
-
   const [updatedProducts, setUpdatedProducts] = useState(
     typeof products === "object" ? products : []
   );
@@ -28,7 +26,7 @@ const Products = ({ products }) => {
           <span className="loading loading-infinity w-40 text-primary"></span>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-10 max-w-5xl mx-auto">
           {updatedProducts.slice(0, 8).map((product, idx) => (
             <Product
               key={idx}

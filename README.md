@@ -10,7 +10,7 @@ This is an e-commerce web site. Here we offer many types of wood furniture
 - [Login Options](#Login-Options)
 - [Authentication System](#Authentication-System)
 - [Cart](#Cart)
-- [Add - Update - Delete Product](#Update Product)
+- [Add - Update - Delete Product](#Update-Product)
 - [Branded Products](#Brand)
 - [All Products](#Shop)
 

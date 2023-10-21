@@ -15,7 +15,7 @@ const Brand = () => {
     <section className="static min-h-screen mt-[calc(100vh)] w-full">
       <div className="flex flex-col justify-center items-center gap-3">
         <h4>Browse The Range</h4>
-        <p className="text-xl text-body">
+        <p className="text-xl text-body text-center">
           We have huge collections to decorate your rooms
         </p>
       </div>
@@ -29,7 +29,7 @@ const Brand = () => {
             <Link
               key={product._id}
               to={`/shop/${product.brand}`}
-              className="card p-0 min-w-min w-96">
+              className="card p-0 min-w-min w-full md:w-96 mx-auto">
               <figure className="px-10 pt-10">
                 <img
                   src={product?.photo}

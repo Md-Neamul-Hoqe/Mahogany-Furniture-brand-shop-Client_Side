@@ -80,9 +80,9 @@ const SignUp = () => {
 
   return (
     <section>
-      <div className="hero min-h-screen">
-        <div className="card w-full max-w-xl lg:bg-white">
-          <form onSubmit={handleRegister} className="card-body">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="card w-full max-w-xl my-10">
+          <form onSubmit={handleRegister} className="card-body bg-base-100">
             <h2 className="text-2xl text-center text-dark font-semibold">
               Register a new account
             </h2>
@@ -145,7 +145,7 @@ const SignUp = () => {
               </button>
             </div>
 
-            <div className="form-control mt-6 flex flex-row gap-2 text-base">
+            <div className="form-control mt-6 flex md:flex-row md:gap-2 text-base">
               Already have an account?{" "}
               <Link className="text-primary font-bold" to="/SignIn">
                 Sign In

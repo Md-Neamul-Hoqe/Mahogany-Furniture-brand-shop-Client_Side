@@ -85,7 +85,7 @@ const Product = ({ product }) => {
       </div>
 
       {/* Product */}
-      <div className="card card-compact justify-start p-0 min-w-min h-full rounded-none">
+      <div className="card card-compact justify-start p-0 min-w-min h-full rounded-none mx-5 md:mx-auto">
         <figure>
           <img
             src={product?.description?.photo}
@@ -93,7 +93,7 @@ const Product = ({ product }) => {
             className="rounded-none h-72 w-full"
           />
         </figure>
-        <div className="card-body text-start">
+        <div className="card-body text-start max-sm:text-center">
           <h5 className={`${theme ? "text-white" : "text-dark"}`}>
             {product.title}
           </h5>

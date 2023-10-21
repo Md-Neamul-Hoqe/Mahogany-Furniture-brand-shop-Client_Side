@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { RiDeleteBin5Line } from "react-icons/ri";
 import { AuthContext } from "../Providers/AuthProviders";
 
 const CartDetails = () => {
-  const { cart, handleRemoveFromCart } = useContext(AuthContext);
+  const { cart, handleRemoveFromCart, theme } = useContext(AuthContext);
   console.log(cart);
   const total = cart?.map((product) => product?.price?.new * product?.purchase);
   return (
@@ -20,7 +21,7 @@ const CartDetails = () => {
             <aside className="card">
               <div className="card-body">
                 <img src="/logo.svg" alt="Logo" className="w-14 mx-auto" />
-                <h2 className="text-title">Cart</h2>
+                <h2 className={theme ? `text-white` : "text-title"}>Cart</h2>
                 <div className="text-sm breadcrumbs">
                   <ul>
                     <li>
@@ -35,15 +36,18 @@ const CartDetails = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-3 gap-5 p-20">
-        <table className="w-full col-span-2">
-          <thead className="bg-primary-light h-14">
+      <section className="grid md:grid-cols-3 gap-5 p-5 md:p-20">
+        <table className="w-full md:col-span-2">
+          <thead
+            className="bg-primary-light h-14 text-black">
             <tr>
               <th>Product</th>
               <th>Price</th>
               <th>Qty</th>
               <th>SubTotal</th>
-              <th></th>
+              <th>
+                <RiDeleteBin5Line className="text-red-600 mx-auto" />
+              </th>
             </tr>
           </thead>
           <tbody className="max-xl:flex-col min-h-[calc(100vh/3)]">
@@ -57,12 +61,12 @@ const CartDetails = () => {
                       alt={product?.title}
                     />
                   </td>
-                  <td>TK. {product?.price?.new}</td>
-                  <td>{product?.purchase}</td>
-                  <td>TK. {total[idx]}</td>
+                  <td className="text-center">TK. {product?.price?.new}</td>
+                  <td className="text-center">{product?.purchase}</td>
+                  <td className="text-center">TK. {total[idx]}</td>
                   <td
                     onClick={() => handleRemoveFromCart(product._id)}
-                    className="text-primary">
+                    className="text-red-600">
                     delete
                   </td>
                 </tr>
@@ -83,13 +87,13 @@ const CartDetails = () => {
           {/* <h5>
             Subtotal <span className="text-body">price</span>
           </h5> */}
-          <h5 className="flex justify-between px-10 my-10">
+          <h5 className="flex justify-between items-center lg:px-10 my-10">
             Total{" "}
             <span className="text-primary">
               TK. {total.reduce((total, current) => total + current, 0)}
             </span>
           </h5>
-          <button className="btn btn-outline capitalize btn-lg btn-wide">
+          <button className="btn btn-outline text-black capitalize btn-lg xl:btn-wide">
             Check Out
           </button>
         </div>

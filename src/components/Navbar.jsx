@@ -40,10 +40,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-base-100 relative z-50 xl:px-20">
+    <nav className="navbar bg-base-100 sticky top-0 z-50 xl:px-20">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost xl:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -62,47 +62,82 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             {NavLinks}
+            <li className="md:hidden">
+              <div>
+                {user && Object.keys(user).length > 0 ? (
+                  <div className="flex items-center">
+                    <div className="avatar mr-2">
+                      <div className="w-8 h-8 rounded-full">
+                        <img
+                          src={user?.photoURL || userDefaultImg}
+                          alt={user && user?.displayName}
+                        />
+                      </div>
+                    </div>
+                    <button className="font-bold mr-2 max-md:hidden">
+                      {user?.displayName
+                        ? user.displayName.length > 10
+                          ? user.displayName.slice(0, 6) + "..."
+                          : user.displayName
+                        : user?.email?.split("@")[0] &&
+                          user.email.split("@")[0] > 10
+                        ? user.email.split("@")[0].slice(0, 5) + "..."
+                        : user.email.split("@")[0]}
+                    </button>
+                    <button onClick={logOut} className="btn">
+                      Log Out
+                    </button>
+                  </div>
+                ) : (
+                  <Link to="/SignIn" className="btn bg-transparent border-0">
+                    <TbUserExclamation className="text-2xl" />
+                  </Link>
+                )}
+              </div>
+            </li>
           </ul>
         </div>
-        <a
-          href="./"
-          className="btn bg-transparent border-0 normal-case font-montserrat text-4xl">
+        <a href="./" className="btn bg-transparent border-0">
           <img width="60em" src={logo} alt="logo" />
-          Mahogany
+          <span className="max-md:hidden normal-case font-montserrat text-4xl">
+            Mahogany
+          </span>
         </a>
       </div>
       <div className="navbar-center hidden xl:flex">
         <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
       </div>
       <div className="navbar-end">
-        {user && Object.keys(user).length > 0 ? (
-          <div className="flex items-center">
-            <div className="avatar mr-2">
-              <div className="w-8 h-8 rounded-full">
-                <img
-                  src={user?.photoURL || userDefaultImg}
-                  alt={user && user?.displayName}
-                />
+        <div className="max-md:hidden">
+          {user && Object.keys(user).length > 0 ? (
+            <div className="flex items-center">
+              <div className="avatar mr-2">
+                <div className="w-8 h-8 rounded-full">
+                  <img
+                    src={user?.photoURL || userDefaultImg}
+                    alt={user && user?.displayName}
+                  />
+                </div>
               </div>
+              <button className="font-bold mr-2 max-md:hidden">
+                {user?.displayName
+                  ? user.displayName.length > 10
+                    ? user.displayName.slice(0, 6) + "..."
+                    : user.displayName
+                  : user?.email?.split("@")[0] && user.email.split("@")[0] > 10
+                  ? user.email.split("@")[0].slice(0, 5) + "..."
+                  : user.email.split("@")[0]}
+              </button>
+              <button onClick={logOut} className="btn">
+                Log Out
+              </button>
             </div>
-            <button className="font-bold mr-2 max-md:hidden">
-              {user?.displayName
-                ? user.displayName.length > 10
-                  ? user.displayName.slice(0, 6) + "..."
-                  : user.displayName
-                : user?.email?.split("@")[0] && user.email.split("@")[0] > 10
-                ? user.email.split("@")[0].slice(0, 5) + "..."
-                : user.email.split("@")[0]}
-            </button>
-            <button onClick={logOut} className="btn">
-              Log Out
-            </button>
-          </div>
-        ) : (
-          <Link to="/SignIn" className="btn bg-transparent border-0">
-            <TbUserExclamation className="text-2xl" />
-          </Link>
-        )}
+          ) : (
+            <Link to="/SignIn" className="btn bg-transparent border-0">
+              <TbUserExclamation className="text-2xl" />
+            </Link>
+          )}
+        </div>
         {/* <Link className="btn bg-transparent border-0">
           <TbSearch />
         </Link>

@@ -2,7 +2,7 @@ import logo from "/logo.svg";
 const Footer = () => {
   return (
     <section className="border-t-2">
-      <footer className="max-w-5xl mx-auto footer p-10">
+      <footer className="max-w-5xl mx-auto footer max-md:py-10 md:p-10">
         <aside>
           <img src={logo} alt="logo" />
           <p>
@@ -43,7 +43,7 @@ const Footer = () => {
           </fieldset>
         </form>
       </footer>
-      <footer className="max-w-5xl mx-auto footer px-10 py-4 border-t">
+      <footer className="max-w-5xl mx-auto footer md:px-10 py-4 border-t">
         <aside className="items-center grid-flow-col">
           <p>2023 Mahogany. All rights reserved</p>
         </aside>
