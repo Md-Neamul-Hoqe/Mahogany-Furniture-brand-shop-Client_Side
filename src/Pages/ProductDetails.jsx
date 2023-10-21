@@ -1,43 +1,44 @@
 // import { useContext } from "react";
 // import { AuthContext } from "../Providers/AuthProviders";
+import { useContext } from "react";
 import Cart from "../components/Cart";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
-import Swal from "sweetalert2";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const ProductDetails = () => {
   const product = useLoaderData();
-  // const { handleAddToCart } = useContext(AuthContext);
+  const { handleAddToCart } = useContext(AuthContext);
 
-  const handleAddToCart = () => {
-    const newCart = [];
-    product.purchase = 1;
-    newCart.push(product);
-    // setCart(newCart);
+  // const handleAddToCart = () => {
+  //   const newCart = [];
+  //   product.purchase = 1;
+  //   newCart.push(product);
+  //   // setCart(newCart);
 
-    /* For database */
-    fetch(`http://127.0.0.1:5000/cart`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(product),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.acknowledged)
-          Swal.fire({
-            title: "The product added to your cart successfully.",
-            showClass: {
-              popup: "animate__animated animate__fadeInDown",
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutUp",
-            },
-          });
-      });
-  };
+  //   /* For database */
+  //   fetch(`http://127.0.0.1:5000/cart`, {
+  //     method: "POST",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(product),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.acknowledged)
+  //         Swal.fire({
+  //           title: "The product added to your cart successfully.",
+  //           showClass: {
+  //             popup: "animate__animated animate__fadeInDown",
+  //           },
+  //           hideClass: {
+  //             popup: "animate__animated animate__fadeOutUp",
+  //           },
+  //         });
+  //     });
+  // };
 
   const {
     title,

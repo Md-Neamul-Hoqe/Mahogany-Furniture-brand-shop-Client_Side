@@ -9,8 +9,6 @@
 
    > **Note:** Among these six brand types, one of them will not have any available products. You will have to show a relevant message on brand page to inform the users.
 
-7. Make sure to implement the `Add to Cart` button.
-
 9. Clicking the `Add to Cart` button will store your product information in to the database. Inform the user with a success message using a toast/alert. `Do not use the browser alert.`
 
 10. Create a `My Cart` page where a user will see all his/her added products. If the user wants, he/she can delete a product. The design is up to you. This will be a private/protected route.

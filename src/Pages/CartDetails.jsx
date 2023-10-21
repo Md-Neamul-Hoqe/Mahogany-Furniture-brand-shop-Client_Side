@@ -5,7 +5,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 const CartDetails = () => {
   const { cart, handleRemoveFromCart } = useContext(AuthContext);
   console.log(cart);
-  const total = cart?.map((product) => product?.price?.new * product?.quantity);
+  const total = cart?.map((product) => product?.price?.new * product?.purchase);
   return (
     <>
       <section>
@@ -58,7 +58,7 @@ const CartDetails = () => {
                     />
                   </td>
                   <td>TK. {product?.price?.new}</td>
-                  <td>{product?.quantity}</td>
+                  <td>{product?.purchase}</td>
                   <td>TK. {total[idx]}</td>
                   <td
                     onClick={() => handleRemoveFromCart(product._id)}

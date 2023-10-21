@@ -93,6 +93,7 @@ const AuthProviders = ({ children }) => {
     return () => googlePopup();
   };
 
+  /* onAuthStateChanged */
   useEffect(() => {
     const userState = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -105,27 +106,56 @@ const AuthProviders = ({ children }) => {
     };
   }, []);
 
-  const handleRemoveFromCart = (id) => {
-    // visual cart remove
-    const remainingCart = cart.filter((product) => product._id !== id);
-    setCart(remainingCart);
-    // remove from LS
-    // removeFromLS(id);
-  };
-
   /* Get Cart from DB */
   useEffect(() => {
     fetch("http://127.0.0.1:5000/cart")
       .then((res) => res.json())
       .then((cartDB) => {
         console.log(cartDB);
-        if (typeof cartDB === "object" && cartDB.length) setCart(...cartDB);
+
+        if (typeof cartDB === "object" && cartDB.length) setCart([...cartDB]);
       })
       .catch((error) => console.error(error));
   }, []);
 
+  const handleRemoveFromCart = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // visual cart remove
+        const remainingCart = cart.filter((product) => product._id !== id);
+        setCart(remainingCart);
+        // remove from LS
+        // removeFromLS(id);
+
+        /* Remove from DB */
+        fetch(`http://127.0.0.1:5000/cart/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire(
+                "Deleted!",
+                "The product is removed from cart successfully.",
+                "success"
+              );
+            }
+          });
+      }
+    });
+  };
+
   const handleAddToCart = (product) => {
     /* Set Bottle To The State */
+    console.log(cart);
     const newCart = [...cart];
 
     const idxOfTheProduct = cart.indexOf(product);
