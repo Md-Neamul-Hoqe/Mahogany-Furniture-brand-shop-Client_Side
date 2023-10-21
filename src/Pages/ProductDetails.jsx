@@ -13,9 +13,9 @@ const ProductDetails = () => {
   const [getQuantity, setGetQuantity] = useState(0);
   const quantityField = document.getElementById("quantity");
   useEffect(() => {
-    quantityField?.addEventListener("blur", () => {
+    quantityField?.addEventListener("keyup", () => {
       const quantityField = document.getElementById("quantity")?.value;
-      
+
       // console.log(parseInt(quantityField));
       setGetQuantity(
         isNaN(parseInt(quantityField)) ? 0 : parseInt(quantityField)
