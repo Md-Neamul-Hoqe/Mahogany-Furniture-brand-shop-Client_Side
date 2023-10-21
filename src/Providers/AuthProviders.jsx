@@ -118,39 +118,40 @@ const AuthProviders = ({ children }) => {
       .catch((error) => console.error(error));
   }, []);
 
-  const handleRemoveFromCart = (id) => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // visual cart remove
-        const remainingCart = cart.filter((product) => product._id !== id);
-        setCart(remainingCart);
-        // remove from LS
-        // removeFromLS(id);
+  const handleRemoveFromCart = (id, purchase) => {
+    if (!purchase)
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // visual cart remove
+          const remainingCart = cart.filter((product) => product._id !== id);
+          setCart(remainingCart);
+          // remove from LS
+          // removeFromLS(id);
 
-        /* Remove from DB */
-        fetch(`http://127.0.0.1:5000/cart/${id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.deletedCount) {
-              Swal.fire(
-                "Deleted!",
-                "The product is removed from cart successfully.",
-                "success"
-              );
-            }
-          });
-      }
-    });
+          /* Remove from DB */
+          fetch(`http://127.0.0.1:5000/cart/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount) {
+                Swal.fire(
+                  "Deleted!",
+                  "The product is removed from cart successfully.",
+                  "success"
+                );
+              }
+            });
+        }
+      });
   };
 
   const handleAddToCart = (product) => {
@@ -190,8 +191,6 @@ const AuthProviders = ({ children }) => {
       product.purchase = 1;
       newCart.push(product);
       setCart(newCart);
-
-      console.log(newCart);
 
       /* For database */
       fetch(`http://127.0.0.1:5000/cart`, {
