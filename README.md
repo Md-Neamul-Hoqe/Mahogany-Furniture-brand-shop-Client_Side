@@ -1,4 +1,4 @@
-# [Mahogany Furniture Co. LTD](https://furniture-assignment-10.web.app/)
+# [Mahogany Furniture Co. LTD](https://mahogany-furniture-mnh.web.app/)
 
 This is an e-commerce web site. Here we offer many types of wood furniture
 
